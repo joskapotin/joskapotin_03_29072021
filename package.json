@@ -1,0 +1,20 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "openclassroom project03",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joskapotin/joskapotin_03_29072021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joskapotin/joskapotin_03_29072021/issues"
+  },
+  "homepage": "https://github.com/joskapotin/joskapotin_03_29072021#readme"
+}
