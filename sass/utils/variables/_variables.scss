@@ -1,0 +1,37 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+$white: #fff;
+$grey: #7e7e7e;
+$grey-lighter: #f6f6f6;
+$grey-light: #eaeaea;
+$grey-dark: #353535;
+$grey-darker: #101010;
+$black: #000;
+
+$color__background-body: $white;
+$color__background: $grey-lighter;
+$color__text-main: $black;
+$color__logo: $grey-darker;
+$color__link--hover: $color-primary;
+
+$gradient-btn: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
+$gradient-btn--hover: linear-gradient(355deg, lighten($color-primary, 5) 0%, lighten($color-secondary, 5) 100%);
+
+
+$gradient-heart: linear-gradient(45deg, rgba(255,121,218,1) 0%, rgba(182,97,219,1) 100%);
+#primary-gradient {
+    --color-stop-1: #FF79DA;
+    --color-stop-2: #9356DC;
+}
+
+$font__heading: 'Shrikhand', cursive;
+$font__main: 'Roboto', sans-serif;
+$font__line-height-body: 1.5;
+
+$site-side__padding: 20px;
+
+$small: 768px;
+$medium: 992px;
+$large: 1440px;

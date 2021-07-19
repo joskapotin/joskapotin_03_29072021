@@ -1,0 +1,11 @@
+.site-header {
+    line-height: 63px;
+    text-align: center;
+
+    .logo {
+        font-family: $font__heading;
+        color: $color__logo;
+        font-size: 3rem;
+        margin: 0;
+    }
+}

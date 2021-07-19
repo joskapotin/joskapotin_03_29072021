@@ -1,0 +1,301 @@
+/*
+ * Solution in pure css.
+ */
+.pure-css .hearts {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    width: 28px;
+    transform: rotate(-45deg);
+
+    .heart-shape {
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        left: -14px;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 18px;
+            height: 28px;
+            border-radius: 18px 18px 0 0;
+        }
+
+        &::after {
+            width: 28px;
+            height: 18px;
+            border-radius: 0 18px 18px 0;
+        }
+    }
+
+    .heart-bg {
+        bottom: 1px;
+        left: -13px;
+
+        &::before,
+        &::after {
+            width: 16px;
+            height: 26px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        &::after {
+            width: 26px;
+            height: 16px;
+            border-radius: 0 16px 16px 0 ;
+        }
+    }
+
+    .heart-stroke {
+        &::before,
+        &::after {
+            background-color: $grey-darker;
+        }
+    }
+      
+    .heart-bg {
+        &::before,
+        &::after {
+            background-color: $white;
+        }
+    }
+
+    .heart-fill {
+        &::before,
+        &::after {
+            background: $color-primary;
+            background: $gradient-heart;
+        }
+    }
+
+    .heart-fill {
+        transform-origin: bottom;
+        transform: scale(0);
+    }
+
+}
+
+.pure-css {
+    height: 28px;
+    width: 28px;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+        & .heart-fill {
+            transform: scale(0);
+            animation: heart-fill .2s linear forwards;
+        }
+    }
+}    
+      
+@keyframes heart-fill {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*
+ * Solution svg-v1.
+ */
+ .svg-v1 {
+    padding: 0;
+
+    .hearts {
+        position: relative;
+        width: 23px;
+        height: 23px;
+    
+        svg {
+            overflow: visible;
+            clip-path: url(#cut-off-heart);
+        }
+
+        .heart-main {
+            overflow: visible;
+            stroke: $black;
+            width: 23px;
+            height: 23px;
+            stroke-width: 1px;
+            fill: transparent;
+            z-index: 10;
+        }
+
+        .heart-fill-clip {
+            stroke-width: 1px;
+        }
+
+        .heart-fill {
+            width: 23px;
+            height: 23px;
+            stroke: none;
+            fill: url(#primary-gradient )$color-primary;
+            transform: translatey(23px);
+        }
+    }
+
+    &:hover {
+        .heart-fill {
+        animation: fill-animation 2s ease-in-out forwards;
+        }
+    }
+}
+@keyframes fill-animation {
+    0%{
+        transform: translatey(23px);
+    }
+    100% {
+        transform: translatey(0);
+    }
+}
+
+
+/*
+ * Solution svg-v2.
+ */
+ .svg-v2 {
+    padding: 0;
+
+    .hearts {
+        position: relative;
+        width: 23px;
+        height: 23px;
+        stroke: $black;
+        stroke-width: 1px;
+        fill: transparent;
+        z-index: 10;
+    
+        svg {
+            overflow: visible;
+            width: 23px;
+            height: 23px;
+        }
+    
+        path {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 73;
+            transform-origin: center;
+            
+        }
+    
+        .heart-background {
+            position: absolute;
+            left: 0;
+            right: 0;
+            stroke: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+    }
+}
+
+    
+      
+/*
+ * Solution SVG demo
+ */
+.svg-demo {
+    padding: 0;
+
+    .hearts {
+        position: relative;
+        width: 23px;
+        height: 23px;
+        stroke: $black;
+        stroke-width: 1px;
+        fill: transparent;
+        z-index: 10;
+    
+        svg {
+            overflow: visible;
+            width: 23px;
+            height: 23px;
+        }
+    
+        path {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 73;
+            transform-origin: center;
+            
+        }
+    
+        .heart-background {
+            position: absolute;
+            left: 0;
+            right: 0;
+            stroke: none;
+            z-index: -1;
+        }
+
+    }
+        
+    &:hover .heart-main path {
+        animation: stroke-animation 2s ease-in-out forwards;
+    }
+
+    &:hover .heart-background {
+        animation: fade-animation 2s ease-in-out forwards;
+    }
+}
+
+@keyframes stroke-animation {
+
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 73;
+    }
+
+    60% {
+        stroke-dashoffset: 146;
+        fill: transparent;
+        transform: scale(1);
+    }
+
+    80% {
+        fill: url(#primary-gradient) $color-primary;
+        transform: scale(1.1);
+    }
+
+    90% {
+        transform: scale(1);
+    }
+
+    100% {
+        stroke-dashoffset: 146;
+        fill: url(#primary-gradient) $color-primary;
+    }
+
+}
+
+@keyframes fade-animation {
+    70% {
+        fill: transparent;
+        transform: scale(1);
+    }
+
+    80% {
+        fill: url(#primary-gradient) $color-primary;
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
