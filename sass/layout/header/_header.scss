@@ -1,9 +1,7 @@
 .site-header {
     display: grid;
-    justify-content: center;
-    align-items: center;
+    place-content: center;
     min-height: 63px;
-    text-align: center;
     position: relative;
 
     .logo {
@@ -18,10 +16,11 @@
         top: 20px;
         left: 23px;
 
-        a {
+        a:link {
             color: $grey-dark;
             border: 0;
             font-size: 1.6rem;
         }
+
     }
 }

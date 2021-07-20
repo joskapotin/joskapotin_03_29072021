@@ -341,7 +341,7 @@ textarea {
   color: #000;
   font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -351,7 +351,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 2rem;
   margin-top: 0;
 }
@@ -359,25 +359,27 @@ h6, .h6 {
 h1, .h1 {
   font-size: 2.6rem;
   line-height: 1.2;
+  font-weight: 600;
 }
 
 h2, .h2 {
   font-size: 2.4rem;
   line-height: 1.25;
+  font-weight: 600;
 }
 
 h3, .h3 {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   line-height: 1.3;
 }
 
 h4, .h4 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1.35;
 }
 
 h5, .h5 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.5;
 }
 
@@ -413,15 +415,12 @@ big {
 a {
   outline: none;
   text-decoration: none;
-}
-
-a:link {
   color: #FF79DA;
   border-bottom: 1px dotted;
 }
 
 a:visited {
-  color: #FF79DA;
+  color: inherit;
 }
 
 a:focus {
@@ -442,8 +441,8 @@ a:active {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
   margin: 0;
+  background: #fff;
 }
 
 picture {
@@ -461,21 +460,23 @@ button {
 }
 
 .btn {
-  font-size: 1.6rem;
-  padding: 1.6rem 2.2rem;
-  border: 0;
-  color: #fff;
-  font-weight: 500;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   background: #9356DC;
   background: linear-gradient(355deg, #9356DC 0%, #FF79DA 100%);
-  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
   border-radius: 50vh;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 0;
+  color: #fff;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 45px auto;
+  padding: 1.6rem 2.2rem;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 .btn:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   background: #a16be0;
   background: linear-gradient(355deg, #a16be0 0%, #ff93e1 100%);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -487,22 +488,27 @@ button {
 /*
  * Solution in pure css.
  */
-.pure-css .hearts {
-  position: relative;
+.restaurant__like-button.pure-css {
+  cursor: pointer;
   display: grid;
-  justify-content: center;
-  align-items: center;
   height: 28px;
-  width: 28px;
+  place-content: center;
+  position: relative;
+  right: 8px;
+  transform-origin: center;
   transform: rotate(-45deg);
+  width: 28px;
 }
-.pure-css .hearts .heart-shape {
-  position: absolute;
+.restaurant__like-button.pure-css:hover .heart-fill {
+  transform: scale(1);
+}
+.restaurant__like-button.pure-css .heart-shape {
+  position: relative;
+  grid-area: hearts;
   height: 28px;
   width: 28px;
-  left: -14px;
 }
-.pure-css .hearts .heart-shape::before, .pure-css .hearts .heart-shape::after {
+.restaurant__like-button.pure-css .heart-shape::before, .restaurant__like-button.pure-css .heart-shape::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -510,59 +516,43 @@ button {
   height: 28px;
   border-radius: 18px 18px 0 0;
 }
-.pure-css .hearts .heart-shape::after {
+.restaurant__like-button.pure-css .heart-shape::after {
   width: 28px;
   height: 18px;
   border-radius: 0 18px 18px 0;
 }
-.pure-css .hearts .heart-bg {
-  bottom: 1px;
-  left: -13px;
+.restaurant__like-button.pure-css .heart-bg {
+  top: 1px;
+  left: 1px;
+  height: 26px;
+  width: 26px;
 }
-.pure-css .hearts .heart-bg::before, .pure-css .hearts .heart-bg::after {
+.restaurant__like-button.pure-css .heart-bg::before, .restaurant__like-button.pure-css .heart-bg::after {
   width: 16px;
   height: 26px;
   border-radius: 16px 16px 0 0;
 }
-.pure-css .hearts .heart-bg::after {
+.restaurant__like-button.pure-css .heart-bg::after {
   width: 26px;
   height: 16px;
   border-radius: 0 16px 16px 0;
 }
-.pure-css .hearts .heart-stroke::before, .pure-css .hearts .heart-stroke::after {
+.restaurant__like-button.pure-css .heart-stroke::before, .restaurant__like-button.pure-css .heart-stroke::after {
   background-color: #101010;
 }
-.pure-css .hearts .heart-bg::before, .pure-css .hearts .heart-bg::after {
+.restaurant__like-button.pure-css .heart-bg::before, .restaurant__like-button.pure-css .heart-bg::after {
   background-color: #fff;
 }
-.pure-css .hearts .heart-fill::before, .pure-css .hearts .heart-fill::after {
+.restaurant__like-button.pure-css .heart-fill::before, .restaurant__like-button.pure-css .heart-fill::after {
   background: #9356DC;
   background: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
 }
-.pure-css .hearts .heart-fill {
-  transform-origin: bottom;
+.restaurant__like-button.pure-css .heart-fill {
+  transform-origin: bottom left;
   transform: scale(0);
+  transition: all 0.2s ease-in-out;
 }
 
-.pure-css {
-  height: 28px;
-  width: 28px;
-  padding: 0;
-  margin: 0;
-}
-.pure-css:hover .heart-fill {
-  transform: scale(0);
-  animation: heart-fill 0.2s linear forwards;
-}
-
-@keyframes heart-fill {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 /*
  * Solution svg-v1.
  */
@@ -727,10 +717,8 @@ button {
 }
 .site-header {
   display: grid;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
   min-height: 63px;
-  text-align: center;
   position: relative;
 }
 .site-header .logo {
@@ -744,7 +732,7 @@ button {
   top: 20px;
   left: 23px;
 }
-.site-header nav a {
+.site-header nav a:link {
   color: #353535;
   border: 0;
   font-size: 1.6rem;
@@ -753,7 +741,7 @@ button {
 .location__form {
   background: #f6f6f6;
   text-align: center;
-  padding-bottom: 57px;
+  padding-bottom: 10px;
 }
 
 .location__field {
@@ -779,11 +767,13 @@ button {
 }
 .location__headline h1 {
   font-size: 2.4rem;
+  padding: 0 40px;
 }
 .location__headline h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #353535;
-  font-weight: 400;
+  font-weight: 300;
+  padding: 0 30px;
 }
 
 .section-operations {
@@ -791,6 +781,7 @@ button {
 }
 
 .operations__list {
+  margin-top: 30px;
   list-style: none;
   padding: 0;
   counter-reset: operations-counter;
@@ -799,6 +790,11 @@ button {
   gap: 28px;
 }
 
+@media (min-width: 992px) {
+  .operations__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 .operation {
   display: flex;
   align-items: center;
@@ -810,7 +806,7 @@ button {
   padding-bottom: 25px;
   padding-right: 33px;
   background: #f6f6f6;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 50vh;
 }
 .operation::before {
@@ -826,7 +822,10 @@ button {
   font-size: 1.4rem;
   line-height: 25px;
 }
-.operation:nth-child(0n+3) .operation__icon {
+.operation:hover {
+  background: #f4eefc;
+}
+.operation:hover .operation__icon {
   color: #9356DC;
 }
 
@@ -840,14 +839,16 @@ button {
 }
 
 .restaurant {
+  display: grid;
+  grid-template-areas: "restaurant";
   position: relative;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.restaurant__link h3, .restaurant__link p {
+.restaurant__link:link {
+  grid-area: restaurant;
   color: #000;
-}
-.restaurant__link:hover h3, .restaurant__link:hover p {
-  color: #9356DC;
+  border: 0;
 }
 
 .restaurant,
@@ -867,6 +868,11 @@ button {
   border-bottom-right-radius: 0;
 }
 
+@media (min-width: 992px) {
+  .restaurant__img img {
+    height: 20vw;
+  }
+}
 .meta-info {
   position: absolute;
   top: 13px;
@@ -889,11 +895,6 @@ button {
   padding: 0 90px 0 14px;
 }
 
-.restaurant__link {
-  text-decoration: none;
-  color: #000;
-}
-
 .restaurant__title {
   margin-top: 10px;
   margin-bottom: 0;
@@ -901,61 +902,68 @@ button {
 
 .restaurant__address {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-weight: 300;
 }
 
-.restaurant__like {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 90px;
-  width: 90px;
+.restaurant__like-button {
+  grid-area: restaurant;
+  margin: auto 24px 33px auto;
+}
+
+.menu__form {
   display: grid;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 0 20px;
 }
 
+@media (min-width: 1200px) {
+  .menu__form {
+    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .menu__form .btn {
+    grid-column: span 3;
+  }
+}
 .menu__field {
   border: 0;
-  padding: 0 20px;
   margin: 0;
+  padding: 0;
 }
 .menu__field h2 {
-  position: relative;
-  font-weight: normal;
-  margin-top: 28px;
-  margin-bottom: 14px;
-  text-transform: uppercase;
   font-size: 1.6rem;
+  font-weight: normal;
+  margin-bottom: 14px;
+  margin-top: 28px;
+  position: relative;
+  text-transform: uppercase;
 }
 .menu__field h2::after {
-  display: block;
-  content: "";
-  height: 3px;
-  width: 40px;
-  margin-top: 6px;
   background: #99E2D0;
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 6px;
+  width: 40px;
 }
 
 .menu__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
 }
 
-@media (min-width: 1200px) {
-  .menu__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
-  }
-}
 .menu-item {
-  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 17px;
   display: flex;
   flex-direction: row;
-  border-radius: 17px;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50%);
+  animation: menu-init 1s ease-in-out forwards;
+  overflow: hidden;
 }
 .menu-item:hover {
   cursor: pointer;
@@ -964,35 +972,46 @@ button {
   margin-right: 0;
 }
 .menu-item:hover .menu-item__input {
-  animation: checkbox 0.5s ease-in-out forwards;
+  transform: translateX(0);
 }
 .menu-item:hover .menu-item__input .menu-item__control {
-  animation: checkbox-control 0.5s ease-in-out forwards;
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+@keyframes menu-init {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu__field .menu-item:nth-of-type(2) {
+  animation-delay: 200ms;
+}
+.menu__field .menu-item:nth-of-type(3) {
+  animation-delay: 400ms;
 }
 
 .menu-item__label {
-  padding: 8px 20px;
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   min-width: 0;
+  padding: 8px 20px;
 }
 
 .menu-item__content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 6px;
   min-width: 0;
-  padding-right: 8px;
 }
 
 .menu-item__name,
 .menu-item__description {
+  margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0;
 }
 
 .menu-item__info {
@@ -1001,52 +1020,53 @@ button {
   margin-left: auto;
   margin-right: -60px;
   /* width of .menu-item__input */
-  transition: margin 0.5s ease-in-out;
+  transition: margin ease-in-out 400ms;
 }
 
 .menu-item__price {
+  font-weight: 500;
   margin-top: auto;
 }
 
 .menu-item__input {
-  flex-shrink: 0;
-  width: 60px;
-  display: grid;
-  grid-template-areas: "checkbox";
-  justify-content: center;
-  align-items: center;
   background: #99E2D0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  display: grid;
+  flex-shrink: 0;
+  grid-template-areas: "menu-item__input";
+  margin-left: auto;
+  place-content: center;
   transform-origin: right;
   transform: translateX(60px);
+  transition: all ease-in-out 400ms;
+  width: 60px;
 }
 .menu-item__input > * {
-  grid-area: checkbox;
+  grid-area: menu-item__input;
 }
 .menu-item__input input {
+  height: 1em;
   opacity: 0;
   width: 1em;
-  height: 1em;
 }
 
 .menu-item__control {
-  display: inline-grid;
-  width: 20px;
-  height: 20px;
+  background: #fff;
   border-radius: 20px;
   border: 0;
-  background: #fff;
   color: #99E2D0;
+  display: inline-grid;
+  height: 20px;
   opacity: 0;
   transform-origin: center center;
   transform: rotate(0deg);
+  transition: all ease-in-out 400ms;
+  width: 20px;
 }
 
 .menu-item__control svg {
-  transition: transform 0.1s ease-in 25ms;
-  transform: scale(0);
   transform-origin: bottom left;
+  transform: scale(0);
+  transition: transform 0.1s ease-in 25ms;
 }
 
 .menu-item__input input:checked + .menu-item__control svg {
@@ -1057,32 +1077,6 @@ button {
   box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
 }
 
-.btn {
-  display: block;
-  margin: 46px auto 58px;
-}
-
-@keyframes checkbox {
-  from {
-    transform: translateX(60px);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes checkbox-control {
-  0% {
-    transform: rotate(0);
-    opacity: 0;
-  }
-  33% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(360deg);
-  }
-}
 .site-footer {
   background: #353535;
 }
@@ -1090,10 +1084,6 @@ button {
 .footer-content {
   padding: 25px 20px 35px;
   color: #fff;
-}
-.footer-content .heading {
-  margin-top: 0;
-  font-size: 1.8rem;
 }
 .footer-content > ul {
   list-style: none;
@@ -1103,9 +1093,9 @@ button {
 .footer-content li {
   margin-top: 2px;
 }
-.footer-content a {
-  color: inherit;
-  border: 0;
+.footer-content a:link {
+  color: #fff;
+  border-style: none;
 }
 .footer-content span {
   margin-right: 15px;
@@ -1130,12 +1120,6 @@ button {
   .restaurants {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
-  }
-}
-@media (min-width: 1200px) {
-  .restaurants {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 30px;
   }
 }
 .section-restaurant {
@@ -1166,11 +1150,8 @@ button {
   background: #f6f6f6;
   border-radius: 37px;
 }
-.section-restaurant .restaurant__like {
-  padding-bottom: 15px;
-  position: static;
-  height: auto;
-  width: auto;
+.section-restaurant .restaurant__like-button {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

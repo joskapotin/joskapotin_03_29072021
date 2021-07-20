@@ -1,28 +1,25 @@
 a {
 	outline: none;
 	text-decoration: none;
-  }
-  
-  a:link {
 	color: $color__link;
 	border-bottom: 1px dotted;
-  }
-  
-  a:visited {
-	color: $color__link;
-  }
-  
-  a:focus {
+}
+
+a:visited {
+	color: inherit;
+}
+
+a:focus {
 	border-bottom-style: solid;
 	background: $color__link--hover;
-  }
-  
-  a:hover {
+}
+
+a:hover {
 	border-bottom-style: solid;
 	color: $color__link--hover;
-  }
-  
-  a:active {
+}
+
+a:active {
 	background: $color__link--hover;
 	color: $color__link;
-  }
+}

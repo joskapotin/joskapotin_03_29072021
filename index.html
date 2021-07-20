@@ -9,11 +9,11 @@
     <script src="https://kit.fontawesome.com/ada96ab6b4.js" crossorigin="anonymous" defer></script>
     <script src="public/js/app.js" defer></script>
 
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shrikhand&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shrikhand&display=swap" media="print" onload="this.media='all'" />
     <noscript>
       <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Shrikhand&display=swap" />
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shrikhand&display=swap" />
     </noscript>  
 
     <link rel="stylesheet" href="public/css/style.css">
@@ -89,15 +89,11 @@
                             </div>
                         </div>
                     </a>
-                    <div class="restaurant__like">
-                        <button class="restaurant__like-button pure-css">
-                            <span class="hearts">
-                                <span class="heart-shape heart-stroke"></span>
-                                <span class="heart-shape heart-bg"></span>
-                                <span class="heart-shape heart-fill"></span>
-                            </span>
-                        </button>
-                    </div>
+                    <span class="restaurant__like-button pure-css">
+                        <span class="heart-shape heart-stroke"></span>
+                        <span class="heart-shape heart-bg"></span>
+                        <span class="heart-shape heart-fill"></span>
+                    </span>
                 </article>
 
                 <article class="restaurant">
@@ -118,25 +114,11 @@
                             </div>
                         </div>
                     </a>
-                    <div class="restaurant__like">
-                        <button class="restaurant__like-button svg-v1">
-                            <span class="hearts">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
-                                    <defs>
-                                        <linearGradient id="primary-gradient">
-                                            <stop offset="0%" stop-color="var(--color-stop-1)" />
-                                            <stop offset="100%" stop-color="var(--color-stop-2)" />
-                                        </linearGradient>
-                                        <clipPath id="cut-off-heart">
-                                            <path d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
-                                        </clipPath>
-                                        </defs>
-                                    <path class="heart-main" d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
-                                    <rect class="heart-fill" x="0" y="0"/>
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
+                    <span class="restaurant__like-button pure-css">
+                        <span class="heart-shape heart-stroke"></span>
+                        <span class="heart-shape heart-bg"></span>
+                        <span class="heart-shape heart-fill"></span>
+                    </span>
                 </article>
 
                 <article class="restaurant">
@@ -154,30 +136,11 @@
                             </div>
                         </div>
                     </a>
-                    <div class="restaurant__like">
-                        <button class="restaurant__like-button svg-v2">
-                            <span class="hearts">
-
-                                <svg class="heart-main" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="primary-gradient">
-                                            <stop offset="0%" stop-color="var(--color-stop-1)" />
-                                            <stop offset="100%" stop-color="var(--color-stop-2)" />
-                                        </linearGradient>
-                                        <symbol id="heart" viewBox="0 0 23 23" style="all: inherit">
-                                            <path d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
-                                        </symbol>
-                                    </defs>
-                                    <use href="#heart"/>
-                                </svg>
-
-                                <svg class="heart-background" xmlns="http://www.w3.org/2000/svg">
-                                    <use xlink:href="#heart">
-                                </svg>
-
-                            </span> 
-                        </button>
-                    </div>
+                    <span class="restaurant__like-button pure-css">
+                        <span class="heart-shape heart-stroke"></span>
+                        <span class="heart-shape heart-bg"></span>
+                        <span class="heart-shape heart-fill"></span>
+                    </span>
                 </article>
 
                 <article class="restaurant">
@@ -193,21 +156,11 @@
                             <p class="restaurant__address">Folie-Méricourt</p>
                         </div>
                     </a>
-                    <div class="restaurant__like">
-                        <button class="restaurant__like-button svg-demo">
-                            <span class="hearts">
-
-                                <svg class="heart-main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
-                                    <path d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
-                                </svg>
-
-                                <svg class="heart-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
-                                    <path d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
-                                </svg>
-
-                            </span>
-                        </button>
-                    </div>
+                    <span class="restaurant__like-button pure-css">
+                        <span class="heart-shape heart-stroke"></span>
+                        <span class="heart-shape heart-bg"></span>
+                        <span class="heart-shape heart-fill"></span>
+                    </span>
                 </article> 
             </div><!-- END of .restaurants -->
         </section>            
@@ -215,7 +168,7 @@
 
     <footer class="site-footer">
         <section class="footer-content">
-            <h4 class="heading">ohmyfood</h4>
+            <span class="heading h2">ohmyfood</span>
             <ul>
                 <li>
                     <span><i class="fas fa-utensils"></i></span>

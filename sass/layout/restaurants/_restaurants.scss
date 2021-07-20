@@ -1,19 +1,14 @@
 .restaurant {
+    display: grid;
+    grid-template-areas: "restaurant";
     position: relative;
+    @include box-shadow;
 }
 
-.restaurant__link {
-    & {
-        h3, p {
-            color: $color__text-main;
-        }
-    }
-
-    &:hover {
-        h3, p {
-            color: $color__link--hover;
-        }
-    }
+.restaurant__link:link {
+    grid-area: restaurant;
+    color: $color__text-main;
+    border: 0;
 }
 
 .restaurant,
@@ -31,6 +26,12 @@
     object-fit: cover;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+@media (min-width: $medium) {
+    .restaurant__img img {
+        height: 20vw;
+    }
 }
 
 .meta-info {
@@ -55,11 +56,6 @@
     padding: 0 90px 0 14px;
 }
 
-.restaurant__link {
-    text-decoration: none;
-    color: $color__text-main;
-}
-
 .restaurant__title {
     margin-top: 10px;
     margin-bottom: 0;
@@ -67,16 +63,11 @@
 
 .restaurant__address {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    font-weight: 300;
 }
 
-.restaurant__like {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 90px;
-    width: 90px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+.restaurant__like-button {
+    grid-area: restaurant;
+    margin: auto 24px 33px auto;
 }

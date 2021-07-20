@@ -1,7 +1,7 @@
 .location__form {
     background: $color__background;
     text-align: center;
-    padding-bottom: 57px;
+    padding-bottom: 10px;
 }
 
 .location__field {
@@ -28,11 +28,13 @@
 
     h1 {
         font-size: 2.4rem;
+        padding: 0 40px;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         color: $grey-dark;
-        font-weight: 400;
+        font-weight: 300;
+        padding: 0 30px;
     }
 }
