@@ -14,6 +14,7 @@ $color__background-body: $white;
 $color__background: $grey-lighter;
 $color__text-main: $black;
 $color__logo: $grey-darker;
+$color__link: $color-secondary;
 $color__link--hover: $color-primary;
 
 $gradient-btn: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
@@ -27,11 +28,13 @@ $gradient-heart: linear-gradient(45deg, rgba(255,121,218,1) 0%, rgba(182,97,219,
 }
 
 $font__heading: 'Shrikhand', cursive;
-$font__main: 'Roboto', sans-serif;
-$font__line-height-body: 1.5;
+$font__main: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font__size: 1.6rem;
+$font__weight: 500;
+$line-height: 1.6;
 
 $site-side__padding: 20px;
 
 $small: 768px;
 $medium: 992px;
-$large: 1440px;
+$large: 1200px;

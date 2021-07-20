@@ -26,24 +26,22 @@
     </header>
 
     <main class="main-content">
-        <section class="location__form-wrapper">
-            <form action="#" method="post" name="location-search" class="location__form">
-                <div class="location__field">
-                    <label for="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </label>
-                    <input id="location" type="text" name="location" value="Paris, Belleville" aria-label="Search" />
-                </div>
 
-                <div class="location__headline">
-                    <h1>Réservez le menu qui vous convient</h1>
-                    <h2>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h2>
-                </div>
+        <form action="#" method="post" name="location-search" class="location__form">
+            <div class="location__field">
+                <label for="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                </label>
+                <input id="location" type="text" name="location" value="Paris, Belleville" aria-label="Search" />
+            </div>
 
-                <button class="btn" type="submit">Explorer nos restaurants</button>
-            </form>
-            
-        </section>
+            <div class="location__headline">
+                <h1>Réservez le menu qui vous convient</h1>
+                <h2>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h2>
+            </div>
+
+            <button class="btn" type="submit">Explorer nos restaurants</button>
+        </form>
 
         <section class="section-operations">
             <h2>Fonctionnement</h2>
@@ -70,11 +68,11 @@
         </section>
 
         <section class="section-restaurants">
-            <h1 class="section-title">Restaurants</h1>
+            <h2 class="section-title">Restaurants</h2>
                 
             <div class="restaurants">
                 <article class="restaurant">
-                    <a href="la-palette-du-gout.html" class="restaurant__link">
+                    <a href="la-palette-du-gout-form.html" class="restaurant__link">
                         <div class="restaurant__thumb">
                             <picture class="restaurant__img">
                                 <source srcset="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
@@ -86,18 +84,18 @@
                         </div>
                         <div class="restaurant__content">
                             <div class="restaurant__info">
-                                <h2 class="restaurant__title">La palette du goût</h2>
+                                <h3 class="restaurant__title">La palette du goût</h3>
                                 <p class="restaurant__address">Ménilmontant</p>
                             </div>
                         </div>
                     </a>
                     <div class="restaurant__like">
                         <button class="restaurant__like-button pure-css">
-                            <div class="hearts">
-                                <div class="heart-shape heart-stroke"></div>
-                                <div class="heart-shape heart-bg"></div>
-                                <div class="heart-shape heart-fill"></div>
-                            </div>
+                            <span class="hearts">
+                                <span class="heart-shape heart-stroke"></span>
+                                <span class="heart-shape heart-bg"></span>
+                                <span class="heart-shape heart-fill"></span>
+                            </span>
                         </button>
                     </div>
                 </article>
@@ -115,14 +113,14 @@
                         </div>
                         <div class="restaurant__content">
                             <div class="restaurant__info">
-                                <h2 class="restaurant__title">La note enchantée</h2>
+                                <h3 class="restaurant__title">La note enchantée</h3>
                                 <p class="restaurant__address">Charonne</p>
                             </div>
                         </div>
                     </a>
                     <div class="restaurant__like">
                         <button class="restaurant__like-button svg-v1">
-                            <div class="hearts">
+                            <span class="hearts">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
                                     <defs>
                                         <linearGradient id="primary-gradient">
@@ -136,7 +134,7 @@
                                     <path class="heart-main" d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
                                     <rect class="heart-fill" x="0" y="0"/>
                                 </svg>
-                            </div>
+                            </span>
                         </button>
                     </div>
                 </article>
@@ -151,16 +149,14 @@
                         </div>
                         <div class="restaurant__content">
                             <div class="restaurant__info">
-                                <a href="#" class="restaurant__link">
-                                    <h2 class="restaurant__title">A la française</h2>
-                                </a>
+                                <h3 class="restaurant__title">A la française</h3>
                                 <p class="restaurant__address">Cité Rouge</p>
                             </div>
                         </div>
                     </a>
                     <div class="restaurant__like">
                         <button class="restaurant__like-button svg-v2">
-                            <div class="hearts">
+                            <span class="hearts">
 
                                 <svg class="heart-main" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
@@ -179,7 +175,7 @@
                                     <use xlink:href="#heart">
                                 </svg>
 
-                            </div> 
+                            </span> 
                         </button>
                     </div>
                 </article>
@@ -193,13 +189,13 @@
                             </picture>
                         </div>
                         <div class="restaurant__info">
-                            <h2 class="restaurant__title">Le délice des sens</h2>
+                            <h3 class="restaurant__title">Le délice des sens</h3>
                             <p class="restaurant__address">Folie-Méricourt</p>
                         </div>
                     </a>
                     <div class="restaurant__like">
                         <button class="restaurant__like-button svg-demo">
-                            <div class="hearts">
+                            <span class="hearts">
 
                                 <svg class="heart-main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23">
                                     <path d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
@@ -209,7 +205,7 @@
                                     <path d="M21.142 2.135C19.938.765 18.343.017 16.642.017c-1.702 0-3.301.754-4.506 2.124l-.629.715-.638-.726C9.664.76 8.06 0 6.359 0 4.66 0 3.061.754 1.862 2.119.658 3.489-.005 5.308 0 7.243c0 1.936.668 3.75 1.872 5.12l9.157 10.415a.625.625 0 00.464.222.619.619 0 00.463-.216l9.176-10.4C22.337 11.015 23 9.197 23 7.26c.005-1.936-.653-3.755-1.858-5.125z"/>
                                 </svg>
 
-                            </div>
+                            </span>
                         </button>
                     </div>
                 </article> 

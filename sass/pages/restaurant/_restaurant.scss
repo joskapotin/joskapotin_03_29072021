@@ -1,0 +1,39 @@
+.section-restaurant {
+    background: $color__background;
+    position: relative;
+    padding-top: 227px;
+    padding-bottom: 12px;
+
+    .restaurant__thumb {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .restaurant__img img {
+        height: 257px;
+        border-radius: 0;
+    }
+
+    .restaurant__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        padding-top: 30px;
+        padding-left: $site-side__padding;
+        padding-right: $site-side__padding;
+        background: $color__background;
+        border-radius: 37px;
+    }
+
+    .restaurant__like {
+        padding-bottom: 15px;
+        position: static;
+        height: auto;
+        width: auto;
+    }
+
+}

@@ -1,0 +1,26 @@
+.section-restaurants {
+    background: $color__background;
+    padding: 58px $site-side__padding 64px;
+    padding-top: 58px;
+}
+
+.restaurants {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+}
+
+@media (min-width: $small) {
+    .restaurants {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (min-width: $large) {
+    .restaurants {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+    }
+}
+

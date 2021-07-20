@@ -1,6 +1,14 @@
 /* Typography
 --------------------------------------------- */
+@import "generic/normalize";
+@import "generic/box-sizing";
+
+/* Typography
+--------------------------------------------- */
 @import "typography/typography";
+@import "typography/heading";
+@import "typography/copy";
+@import "typography/links";
 
 /* Elements
 --------------------------------------------- */

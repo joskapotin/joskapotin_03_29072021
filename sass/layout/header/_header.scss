@@ -1,11 +1,27 @@
 .site-header {
-    line-height: 63px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 63px;
     text-align: center;
+    position: relative;
 
     .logo {
         font-family: $font__heading;
         color: $color__logo;
         font-size: 3rem;
         margin: 0;
+    }
+
+    nav {
+        position: absolute;
+        top: 20px;
+        left: 23px;
+
+        a {
+            color: $grey-dark;
+            border: 0;
+            font-size: 1.6rem;
+        }
     }
 }
