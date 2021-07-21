@@ -6,4 +6,5 @@ img {
 	display: block;
 	height: auto; // Make sure images are scaled correctly.
 	width: 100%; // Adhere to container width.
+	object-fit: cover;
 }

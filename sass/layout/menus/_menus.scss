@@ -1,20 +1,6 @@
 .menu__form {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
     padding: 0 $site-side__padding;
 }
-
-@media (min-width: $large) {
-    .menu__form {
-        gap: 14px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-
-        .btn {
-            grid-column: span 3;
-        }
-    }
-}
-
 
 .menu__field {
     border: 0;
@@ -40,12 +26,6 @@
     }
 }
 
-.menu__grid {
-    display: grid;
-    gap: 14px;
-    grid-template-columns: minmax(0, 1fr);
-}
-
 .menu-item {
     @include box-shadow;
     background: $white;
@@ -57,7 +37,8 @@
     animation: menu-init 1s ease-in-out forwards;
     overflow: hidden;
 
-    &:hover {
+    &:hover,
+    &:focus {
         cursor: pointer;
 
         & .menu-item__info {

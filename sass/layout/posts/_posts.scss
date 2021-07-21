@@ -1,0 +1,73 @@
+.section-posts {
+    background: $color__background;
+    padding: 58px $site-side__padding 64px;
+    padding-top: 58px;
+}
+
+.post {
+    @include box-shadow;
+    background: $white;
+    border-radius: 15px;
+    display: grid;
+    grid-template-areas: "restaurant";
+    overflow: hidden;
+    position: relative;
+}
+
+.post__link {
+    &:link {
+        grid-area: restaurant;
+        color: $color__text-main;
+        border: 0;
+    }
+
+    &:hover {
+        background: $color__link;
+	    color: darken($color__link--hover, 30);
+    }
+}
+
+.post__thumb {
+    display: grid;
+}
+
+.post__img img {
+    height: 174px;
+}
+
+@media (min-width: $medium) {
+    .post__img img {
+        height: 250px;
+    }
+}
+
+.meta-info {
+    position: absolute;
+    top: 13px;
+    right: 11px;
+    padding: 5px 13px;
+    background-color: $color-tertiary;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.post__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 90px 0 14px;
+}
+
+.post__title {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.post__description {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.btn-like {
+    grid-area: restaurant;
+    margin: auto 24px 33px auto;
+}

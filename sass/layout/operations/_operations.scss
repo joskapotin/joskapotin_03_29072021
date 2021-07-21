@@ -7,15 +7,7 @@
     list-style: none;
     padding: 0;
     counter-reset: operations-counter;
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 28px;
-}
-
-@media (min-width: $medium) {
-    .operations__list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
 }
 
 .operation {
@@ -60,5 +52,6 @@
 }
 
 .operation__text {
+    font-weight: bolder;
     margin-left: 27px;
 }

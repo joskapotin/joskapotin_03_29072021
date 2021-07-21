@@ -1,8 +1,9 @@
 a {
-	outline: none;
+	position: relative;
+	outline: solid transparent;
 	text-decoration: none;
 	color: $color__link;
-	border-bottom: 1px dotted;
+	border-bottom: 1px dotted currentColor;
 }
 
 a:visited {
@@ -11,7 +12,8 @@ a:visited {
 
 a:focus {
 	border-bottom-style: solid;
-	background: $color__link--hover;
+	background: $color__link;
+	color: darken($color__link--hover, 30);
 }
 
 a:hover {
@@ -20,6 +22,7 @@ a:hover {
 }
 
 a:active {
-	background: $color__link--hover;
-	color: $color__link;
+	background: $color__link;
+	color: darken($color__link--hover, 30);
+	top: 1px;
 }
