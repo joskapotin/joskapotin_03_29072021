@@ -569,10 +569,10 @@ button {
   border-radius: 15px;
   display: grid;
   place-content: center;
-  top: 10px;
-  right: 10px;
-  bottom: 10px;
-  left: 10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   opacity: 0;
   place-content: center;
   position: fixed;
