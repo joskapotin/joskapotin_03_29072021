@@ -304,6 +304,9 @@ button {
 .btn-like.pure-css .like-check:checked ~ .heart-fill {
   transform: scale(1);
 }
+.btn-like.pure-css .like-check:focus-visible + .heart-stroke {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
+}
 .btn-like.pure-css .heart-shape {
   grid-area: btn-like;
   position: relative;
@@ -550,7 +553,7 @@ button {
   width: 1em;
   height: 1em;
 }
-.checkbox__input input:focus + .checkbox__control {
+.checkbox__input input:focus-visible + .checkbox__control {
   box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
 }
 .checkbox__input input:checked + .checkbox__control svg {
@@ -1039,9 +1042,6 @@ button {
   width: 60px;
   margin-right: -60px;
   transition: margin linear 400ms;
-}
-.menu__field .menu-item .menu-item__input input:focus + .checkbox__control {
-  box-shadow: none;
 }
 .menu__field .menu-item .menu-item__control {
   height: 2rem;

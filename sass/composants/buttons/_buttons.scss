@@ -58,10 +58,6 @@ button {
     transform: rotate(-45deg);
     width: 28px;
 
-    &:hover .heart-fill {
-       // transform: scale(1);
-    }
-
     .like-check {
         grid-area: btn-like;
         opacity: 0;
@@ -71,6 +67,11 @@ button {
         &:checked ~ .heart-fill {
             transform: scale(1);
         }
+
+        &:focus-visible + .heart-stroke {
+            box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
+        }
+
     }
 
     .heart-shape {

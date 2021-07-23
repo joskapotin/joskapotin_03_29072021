@@ -34,7 +34,7 @@
         width: 1em;
         height: 1em;
 
-        &:focus+.checkbox__control {
+        &:focus-visible + .checkbox__control {
             box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
         }
 

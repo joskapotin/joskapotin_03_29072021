@@ -92,10 +92,6 @@
             width: 60px;
             margin-right: -60px;
             transition: margin linear 400ms;
-
-            input:focus + .checkbox__control {
-                box-shadow: none;
-            }
         }
 
         .menu-item__control {
