@@ -793,7 +793,7 @@ button {
   padding-top: 220px;
   background: #fff;
 }
-@media (min-width: 600px) and (max-width: 1200px) {
+@media (min-width: 640px) and (max-width: 1200px) {
   .page-post .post::after {
     background: #353535;
     bottom: 0;
@@ -804,7 +804,7 @@ button {
     right: 0;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1480px) {
   .page-post .post::after {
     background: #353535;
     bottom: 0;
@@ -838,12 +838,12 @@ button {
   padding-bottom: 12px;
   z-index: 10;
 }
-@media (min-width: 600px) and (max-width: 1200px) {
+@media (min-width: 640px) and (max-width: 1200px) {
   .page-post .post .post-content {
     border-radius: 37px;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1480px) {
   .page-post .post .post-content {
     border-radius: 37px;
   }
