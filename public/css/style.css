@@ -792,7 +792,7 @@ button {
 .section-post {
   position: relative;
   padding-top: 220px;
-  background: #f6f6f6;
+  background: #fff;
 }
 .section-post .post__thumb {
   display: block;
@@ -807,11 +807,14 @@ button {
   border-radius: 0;
 }
 .section-post .post-content {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   background: #f6f6f6;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-radius: 37px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding-top: 30px;
   padding-bottom: 12px;
   z-index: 10;
