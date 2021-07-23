@@ -30,7 +30,8 @@
 
 @media (min-width: $large) {
     .grid-large {
-        gap: 50px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        grid-template-columns: repeat(3, minmax(0, 400px));
+        justify-content: space-between;
     }
 }
