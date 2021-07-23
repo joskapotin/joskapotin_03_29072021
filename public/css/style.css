@@ -725,9 +725,13 @@ button {
 
 .site-header {
   display: grid;
-  place-content: center;
   min-height: 63px;
-  position: relative;
+  grid-template-areas: "site-header";
+  align-items: center;
+}
+.site-header .branding {
+  grid-area: site-header;
+  justify-self: center;
 }
 .site-header .logo {
   font-family: "Shrikhand", cursive;
@@ -736,11 +740,11 @@ button {
   margin: 0;
 }
 .site-header nav {
-  position: absolute;
-  top: 20px;
-  left: 23px;
+  grid-area: site-header;
+  justify-self: start;
 }
 .site-header nav a:link {
+  padding: 1em 1em 1em 0;
   color: #353535;
   border: 0;
   font-size: 1.6rem;

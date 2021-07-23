@@ -1,8 +1,13 @@
 .site-header {
     display: grid;
-    place-content: center;
     min-height: 63px;
-    position: relative;
+    grid-template-areas: "site-header";
+    align-items: center;
+
+    .branding {
+        grid-area: site-header;
+        justify-self: center;
+    }
 
     .logo {
         font-family: $font__heading;
@@ -12,11 +17,11 @@
     }
 
     nav {
-        position: absolute;
-        top: 20px;
-        left: 23px;
-
+        grid-area: site-header;
+        justify-self: start;
+        
         a:link {
+            padding: 1em 1em 1em 0;
             color: $grey-dark;
             border: 0;
             font-size: 1.6rem;
