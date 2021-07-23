@@ -728,8 +728,7 @@ button {
     gap: 40px;
   }
 }
-
-.post {
+.posts .post {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   background: #fff;
   border-radius: 15px;
@@ -789,12 +788,21 @@ button {
   margin: auto 24px 33px auto;
 }
 
-.section-post {
+.page-post .post {
   position: relative;
   padding-top: 220px;
   background: #fff;
 }
-.section-post .post__thumb {
+.page-post .post::after {
+  background: #353535;
+  bottom: 0;
+  content: "";
+  height: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+.page-post .post .post__thumb {
   display: block;
   position: absolute;
   top: 0;
@@ -802,24 +810,20 @@ button {
   width: 100%;
   z-index: 5;
 }
-.section-post .post__img img {
+.page-post .post .post__img img {
   height: 257px;
   border-radius: 0;
 }
-.section-post .post-content {
+.page-post .post .post-content {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
   background: #f6f6f6;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   border-radius: 37px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   padding-top: 30px;
   padding-bottom: 12px;
   z-index: 10;
 }
-.section-post .post__header {
+.page-post .post .post__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -827,11 +831,11 @@ button {
   position: relative;
 }
 @media (min-width: 1200px) {
-  .section-post .post__header {
+  .page-post .post .post__header {
     justify-content: center;
   }
 }
-.section-post .btn-like {
+.page-post .post .btn-like {
   margin-left: 50px;
 }
 
