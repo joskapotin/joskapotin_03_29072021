@@ -67,6 +67,7 @@
         z-index: 999;
         transform-origin: center;
         animation: jump $duration infinite both;
+        cursor: pointer;
 
         &:active {
             animation-play-state: paused;

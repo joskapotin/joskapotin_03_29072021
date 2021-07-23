@@ -623,6 +623,7 @@ button {
   z-index: 999;
   transform-origin: center;
   animation: jump 1s infinite both;
+  cursor: pointer;
 }
 .loader .ball:active {
   animation-play-state: paused;
