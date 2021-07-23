@@ -978,11 +978,11 @@ button {
 }
 .menu__field .menu-item {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  animation: menu-init 1s ease-in-out both;
   background: #fff;
   border-radius: 17px;
-  animation: menu-init 1s ease-in-out both;
+  display: flex;
   overflow: hidden;
-  grid-template-columns: 1fr 60px;
 }
 .menu__field .menu-item:nth-of-type(2) {
   animation-delay: 200ms;
@@ -990,12 +990,20 @@ button {
 .menu__field .menu-item:nth-of-type(3) {
   animation-delay: 400ms;
 }
+.menu__field .menu-item:hover .menu-item__input {
+  margin-right: 0;
+}
+.menu__field .menu-item:hover .menu-item__input .menu-item__control {
+  opacity: 1;
+  transform: rotate(360deg);
+}
 .menu__field .menu-item .menu-item__label {
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   justify-content: space-between;
-  padding: 10px;
   min-width: 0;
+  padding: 10px;
 }
 .menu__field .menu-item .menu-item__content {
   display: flex;
@@ -1013,8 +1021,6 @@ button {
 .menu__field .menu-item .menu-item__info {
   align-self: flex-end;
   padding: 0 10px;
-  margin-right: -60px;
-  transition: margin linear 400ms;
 }
 .menu__field .menu-item .menu-item__price {
   font-weight: bolder;
@@ -1022,8 +1028,9 @@ button {
 .menu__field .menu-item .menu-item__input {
   background: #99E2D0;
   place-content: center;
-  transform: translateX(60px);
-  transition: transform linear 400ms;
+  width: 60px;
+  margin-right: -60px;
+  transition: margin linear 400ms;
 }
 .menu__field .menu-item .menu-item__control {
   height: 2rem;
@@ -1035,26 +1042,12 @@ button {
   opacity: 0;
   transition: transform linear 400ms, opacity linear 400ms;
 }
-.menu__field .menu-item .menu-item__label:focus .menu-item__info {
-  transition-duration: 0.01ms;
+.menu__field .menu-item .menu-item__input:focus-within {
+  transition: none !important;
   margin-right: 0;
 }
-.menu__field .menu-item .menu-item__label:focus + .menu-item__input {
-  transition-duration: 0.01ms;
-  transform: translateX(0);
-}
-.menu__field .menu-item .menu-item__label:focus + .menu-item__input .menu-item__control {
-  transition-duration: 0.01ms;
-  opacity: 1;
-  transform: rotate(360deg);
-}
-.menu__field .menu-item:hover .menu-item__info {
-  margin-right: 0;
-}
-.menu__field .menu-item:hover .menu-item__input {
-  transform: translateX(0);
-}
-.menu__field .menu-item:hover .menu-item__input .menu-item__control {
+.menu__field .menu-item .menu-item__input:focus-within .menu-item__control {
+  transition: none !important;
   opacity: 1;
   transform: rotate(360deg);
 }
@@ -1067,32 +1060,6 @@ button {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@keyframes item-info {
-  from {
-    margin-right: -60px;
-  }
-  to {
-    margin-right: 0;
-  }
-}
-@keyframes item-input {
-  from {
-    transform: translateX(60px);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes item-control {
-  from {
-    opacity: 0;
-    transform: rotate(0);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(360deg);
   }
 }
 .site-footer {
