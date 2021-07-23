@@ -274,7 +274,7 @@ button {
 .btn::before {
   box-shadow: 0px 2px 5px rgba(121, 72, 182, 0.5);
   background: #a16be0;
-  background: linear-gradient(355deg, #ac66ff 0%, #ff93e1 100%);
+  background: linear-gradient(355deg, #782cd3 0%, #ff46cc 100%);
   border-radius: 50vh;
   bottom: 0;
   content: "";
@@ -966,13 +966,10 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
-}
-.section-post .like-btn {
-  margin: 0;
 }
 
 .menu__form {

@@ -32,14 +32,10 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         position: relative;
         padding-left: $site-side__padding;
         padding-right: $site-side__padding;
-    }
-
-    .like-btn {
-        margin: 0;
     }
 
 }
