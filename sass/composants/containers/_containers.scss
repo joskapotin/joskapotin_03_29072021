@@ -1,0 +1,32 @@
+.container {
+    margin: 0 auto;
+    max-width: $container-size;
+    padding-left: $site-gap;
+    padding-right: $site-gap;
+}
+
+.container-small {
+    @extend .container;
+    max-width: $container-size;
+}
+
+.container-large {
+    @extend .container;
+    max-width: $container-size__max;
+}
+
+@media (min-width: $medium) {
+    .container {
+        padding-left: $site-gap*2;
+        padding-right: $site-gap*2;
+    }
+    .container-medium {
+        max-width: $container-size__max;
+    }
+}
+
+@media (min-width: $large) {
+    .container-small {
+        max-width: $container-size__max;
+    }
+}

@@ -32,8 +32,10 @@ $font__size: 1.6rem;
 $font__weight: 300;
 $line-height: 1.6;
 
-$site-size--max: 1440px;
-$site-side__padding: 20px;
+$container-size: 600px;
+$container-size__max: 1440px;
+
+$site-gap: 20px;
 
 $small: 768px;
 $medium: 992px;

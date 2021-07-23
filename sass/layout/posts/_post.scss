@@ -34,8 +34,13 @@
         justify-content: space-between;
         align-items: flex-start;
         position: relative;
-        padding-left: $site-side__padding;
-        padding-right: $site-side__padding;
+
+        @media (min-width: $large) {
+            justify-content: center;
+        }
     }
 
+    .btn-like {
+        margin-left: 50px;
+    }
 }

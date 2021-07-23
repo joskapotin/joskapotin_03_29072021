@@ -204,51 +204,34 @@ img {
   object-fit: cover;
 }
 
-.container {
+.container, .container-large, .container-small {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 600px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 18px;
-}
-
-.container-small,
-.container-medium {
+.container-small {
   max-width: 600px;
 }
 
-@media (min-width: 768px) {
-  .grid-small {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
+.container-large {
+  max-width: 1440px;
 }
+
 @media (min-width: 992px) {
+  .container, .container-small, .container-large {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   .container-medium {
     max-width: 1440px;
-  }
-
-  .grid-medium {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .flex-medium {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 }
 @media (min-width: 1200px) {
   .container-small {
     max-width: 1440px;
-  }
-
-  .grid-large {
-    grid-template-columns: repeat(3, minmax(0, 400px));
-    justify-content: space-between;
   }
 }
 button {
@@ -800,15 +783,29 @@ button {
 }
 
 .section-operations {
-  padding: 50px 20px 70px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+@media (min-width: 768px) {
+  .section-operations .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 }
 
 .operations__list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
   margin-top: 30px;
   list-style: none;
   padding: 0;
   counter-reset: operations-counter;
-  gap: 28px;
+}
+@media (min-width: 992px) {
+  .operations__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .operation {
@@ -871,8 +868,26 @@ button {
 
 .section-posts {
   background: #f6f6f6;
-  padding: 58px 20px 64px;
   padding-top: 58px;
+  padding-bottom: 64px;
+}
+@media (min-width: 768px) {
+  .section-posts .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+@media (min-width: 992px) {
+  .posts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
 }
 
 .post {
@@ -898,12 +913,12 @@ button {
 .post__img img {
   height: 174px;
 }
-
 @media (min-width: 992px) {
   .post__img img {
     height: 250px;
   }
 }
+
 .meta-info {
   position: absolute;
   top: 13px;
@@ -968,13 +983,31 @@ button {
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  padding-left: 20px;
-  padding-right: 20px;
+}
+@media (min-width: 1200px) {
+  .section-post .post__header {
+    justify-content: center;
+  }
+}
+.section-post .btn-like {
+  margin-left: 50px;
 }
 
 .menu__form {
-  padding: 0 20px;
+  padding: 0;
   background: #f6f6f6;
+}
+
+.menus-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+}
+@media (min-width: 1200px) {
+  .menus-grid {
+    grid-template-columns: repeat(3, minmax(0, 400px));
+    justify-content: space-between;
+  }
 }
 
 .menu__field {
@@ -997,6 +1030,11 @@ button {
   height: 3px;
   margin-top: 6px;
   width: 40px;
+}
+.menu__field .menu-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
 }
 .menu__field .menu-item {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -1090,35 +1128,49 @@ button {
 }
 
 .footer-content {
-  padding: 25px 20px 35px;
+  padding-top: 25px;
+  padding-bottom: 35px;
   color: #fff;
 }
-.footer-content > ul {
+@media (min-width: 768px) {
+  .footer-content .heading {
+    text-align: center;
+  }
+}
+.footer-content ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+@media (min-width: 768px) {
+  .footer-content ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+}
 .footer-content li {
   margin-top: 2px;
 }
-.footer-content a {
+.footer-content li a {
   color: #fff;
   border-color: transparent;
 }
-.footer-content a:focus {
+.footer-content li a:focus {
   color: #782cd3;
 }
-.footer-content a:hover {
+.footer-content li a:hover {
   color: currentColor;
   border-color: currentColor;
 }
-.footer-content a:active {
+.footer-content li a:active {
   color: #782cd3;
 }
-.footer-content span {
+.footer-content li span {
   margin-right: 15px;
 }
-.footer-content span .fas {
+.footer-content li span .fas {
   width: 13px;
 }
 

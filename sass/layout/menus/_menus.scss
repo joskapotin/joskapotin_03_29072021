@@ -1,6 +1,17 @@
 .menu__form {
-    padding: 0 $site-side__padding;
+    padding: 0;
     background: $color__background;
+}
+
+.menus-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+
+    @media (min-width: $large) {
+        grid-template-columns: repeat(3, minmax(0, 400px));
+        justify-content: space-between;
+    }
 }
 
 .menu__field {
@@ -26,6 +37,12 @@
         }
     }
 
+    .menu-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+    
     .menu-item {
         @include box-shadow;
         animation: menu-init 1s ease-in-out both;
@@ -119,7 +136,6 @@
         }
     }
 }
-
 
 @keyframes menu-init {
     from {
