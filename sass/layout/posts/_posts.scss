@@ -18,12 +18,6 @@
     grid-area: restaurant;
     color: $color__text-main;
     border: 0;
-
-    &:hover {
-        .post__title {
-            text-decoration: underline;
-        }
-    }
 }
 
 .post__thumb {

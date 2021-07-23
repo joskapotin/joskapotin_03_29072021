@@ -863,9 +863,6 @@ button {
   color: #000;
   border: 0;
 }
-.post__link:hover .post__title {
-  text-decoration: underline;
-}
 
 .post__thumb {
   display: grid;
