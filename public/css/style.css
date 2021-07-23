@@ -286,6 +286,7 @@ button {
 .btn-like.pure-css {
   cursor: pointer;
   display: grid;
+  grid-template-areas: "btn-like";
   height: 28px;
   place-content: center;
   position: relative;
@@ -294,12 +295,18 @@ button {
   transform: rotate(-45deg);
   width: 28px;
 }
-.btn-like.pure-css:hover .heart-fill {
+.btn-like.pure-css .like-check {
+  grid-area: btn-like;
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+}
+.btn-like.pure-css .like-check:checked ~ .heart-fill {
   transform: scale(1);
 }
 .btn-like.pure-css .heart-shape {
+  grid-area: btn-like;
   position: relative;
-  grid-area: hearts;
   height: 28px;
   width: 28px;
 }
@@ -542,6 +549,9 @@ button {
   opacity: 0;
   width: 1em;
   height: 1em;
+}
+.checkbox__input input:focus + .checkbox__control {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
 }
 .checkbox__input input:checked + .checkbox__control svg {
   transform: scale(1);
@@ -1029,6 +1039,9 @@ button {
   width: 60px;
   margin-right: -60px;
   transition: margin linear 400ms;
+}
+.menu__field .menu-item .menu-item__input input:focus + .checkbox__control {
+  box-shadow: none;
 }
 .menu__field .menu-item .menu-item__control {
   height: 2rem;

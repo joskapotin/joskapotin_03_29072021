@@ -47,26 +47,35 @@ button {
  * Solution in pure css.
  */
  .btn-like.pure-css {
+    cursor: pointer;
+    display: grid;
+    grid-template-areas: "btn-like";
+    height: 28px;
+    place-content: center;
+    position: relative;
+    right: 8px;
+    transform-origin: center;
+    transform: rotate(-45deg);
+    width: 28px;
 
-    & {
-        cursor: pointer;
-        display: grid;
-        height: 28px;
-        place-content: center;
-        position: relative;
-        right: 8px;
-        transform-origin: center;
-        transform: rotate(-45deg);
-        width: 28px;
+    &:hover .heart-fill {
+       // transform: scale(1);
+    }
 
-        &:hover .heart-fill {
+    .like-check {
+        grid-area: btn-like;
+        opacity: 0;
+        width: 1em;
+        height: 1em;
+
+        &:checked ~ .heart-fill {
             transform: scale(1);
         }
     }
 
     .heart-shape {
+        grid-area: btn-like;
         position: relative;
-        grid-area: hearts;
         height: 28px;
         width: 28px;
 

@@ -35,7 +35,7 @@
         height: 1em;
 
         &:focus+.checkbox__control {
-            //box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
+            box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
         }
 
         &:checked+.checkbox__control svg {
