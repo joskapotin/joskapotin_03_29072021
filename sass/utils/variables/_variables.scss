@@ -14,14 +14,15 @@ $color__background-body: $white;
 $color__background: $grey-lighter;
 $color__text-main: $black;
 $color__logo: $grey-darker;
-$color__link: $color-secondary;
-$color__link--hover: $color-primary;
+
+$color__link: $color-primary;
+$color__link--hover: lightness-shift($color__link);
 
 $color-btn: $color-primary;
 $color-btn--hover: lighten($color-primary, 5);
 
 $gradient-btn: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
-$gradient-btn--hover: linear-gradient(355deg, saturate(lighten($color-primary, 10), 80) 0%, saturate(lighten($color-secondary, 10), 80) 100%);
+$gradient-btn--hover: linear-gradient(355deg, saturate(lighten($color-primary, 10), 80) 0%, saturate(lighten($color-secondary, 5), 80) 100%);
 
 $gradient-heart: linear-gradient(45deg, rgba(255,121,218,1) 0%, rgba(182,97,219,1) 100%);
 #primary-gradient {

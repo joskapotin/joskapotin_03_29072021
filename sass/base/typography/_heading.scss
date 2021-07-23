@@ -6,7 +6,6 @@ h5, .h5,
 h6, .h6 {
   font-weight: 500;
   margin-bottom: 2.0rem;
-  margin-top: 0;
 }
 
 h1, .h1 {
@@ -42,6 +41,7 @@ h6, .h6 {
 }
 
 .heading {
+  display: block;
   font-family: $font__heading;
   font-weight: 400;
 }

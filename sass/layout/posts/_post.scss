@@ -1,18 +1,31 @@
 .section-post {
-    background: $color__background;
     position: relative;
-    padding-top: 227px;
-    padding-bottom: 12px;
+    padding-top: 220px;
+    background: $color__background;
 
     .post__thumb {
+        display: block;
         position: absolute;
         top: 0;
+        left: 0;
         width: 100%;
+        z-index: 5;
     }
 
     .post__img img {
         height: 257px;
         border-radius: 0;
+    }
+    
+    .post-content {
+        position: relative;
+        background: $color__background;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-radius: 37px;
+        padding-top: 30px;
+        padding-bottom: 12px;
+        z-index: 10;
     }
 
     .post__header {
@@ -21,12 +34,8 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        z-index: 10;
-        padding-top: 30px;
         padding-left: $site-side__padding;
         padding-right: $site-side__padding;
-        background: $color__background;
-        border-radius: 37px;
     }
 
     .like-btn {

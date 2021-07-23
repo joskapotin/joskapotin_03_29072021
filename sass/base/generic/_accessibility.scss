@@ -1,4 +1,5 @@
-button:focus {
-    outline: max(1px, 0.1em) solid currentColor;
+button:focus,
+input:focus {
+    outline: 2px solid $color-primary;
     outline-offset: 0.25em;
-  }
+}

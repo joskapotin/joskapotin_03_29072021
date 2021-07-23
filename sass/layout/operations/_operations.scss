@@ -11,18 +11,19 @@
 }
 
 .operation {
-    display: flex;
+    @include box-shadow;
     align-items: center;
+    background: $grey-lighter;
+    border-radius: 50vh;
     counter-increment: operations-counter;
+    display: flex;
     flex-grow: 1;
-    position: relative;
     margin-left: 12px;
-    padding-top: 25px;
     padding-bottom: 25px;
     padding-right: 33px;
-    background: $grey-lighter;
-    @include box-shadow;
-    border-radius: 50vh;
+    padding-top: 25px;
+    position: relative;
+    z-index: 10;
 
     &::before {
         content: counter(operations-counter);
@@ -38,10 +39,27 @@
         line-height: 25px;
     }
 
-    &:hover {
+    &:after {
         background: lighten($color-primary, 36);
+        border-radius: inherit;
+        bottom: 0;
+        content: "";
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        transition: opacity ease-in-out 200ms;
+        right: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    &:hover {
         .operation__icon {
             color: $color-primary;
+        }
+
+        &::after {
+            opacity: 1;
         }
     }
 }

@@ -15,15 +15,17 @@
 }
 
 .post__link {
-    &:link {
-        grid-area: restaurant;
+    grid-area: restaurant;
+    color: $color__text-main;
+    border: 0;
+
+    &:visited {
         color: $color__text-main;
-        border: 0;
     }
 
     &:hover {
-        background: $color__link;
-	    color: darken($color__link--hover, 30);
+        color: $color__text-main;
+        background: $color-secondary;
     }
 }
 
@@ -51,7 +53,7 @@
     color: rgba(0, 0, 0, .5);
 }
 
-.post__content {
+.post__exerpt {
     display: flex;
     flex-direction: column;
     padding: 0 90px 0 14px;

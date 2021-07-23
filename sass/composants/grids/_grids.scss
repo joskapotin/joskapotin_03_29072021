@@ -20,6 +20,12 @@
     .grid-medium {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
+    .flex-medium {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 @media (min-width: $large) {

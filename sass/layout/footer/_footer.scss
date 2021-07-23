@@ -16,9 +16,23 @@
         margin-top: 2px;
     }
 
-    a:link {
+    a {
         color: $white;
-        border-style: none;
+        border-color:transparent;
+
+        &:focus {
+            color: $color__link--hover;
+        }
+
+        &:hover {
+            color: currentColor;
+            border-color: currentColor;
+        }
+
+        &:active {
+            color: $color__link--hover;
+        }
+
     }
 
     span {

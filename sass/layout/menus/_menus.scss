@@ -1,5 +1,6 @@
 .menu__form {
     padding: 0 $site-side__padding;
+    background: $color__background;
 }
 
 .menu__field {
@@ -24,47 +25,15 @@
             width: 40px;
         }
     }
-}
 
-.menu-item {
-    @include box-shadow;
-    background: $white;
-    border-radius: 17px;
-    display: flex;
-    flex-direction: row;
-    opacity: 0;
-    transform: translateY(50%);
-    animation: menu-init 1s ease-in-out forwards;
-    overflow: hidden;
-
-    &:hover,
-    &:focus {
-        cursor: pointer;
-
-        & .menu-item__info {
-            margin-right: 0;
-        }
-
-        & .menu-item__input {
-            transform: translateX(0);
-
-            & .menu-item__control {
-                opacity: 1;
-                transform: rotate(360deg);
-            }
-        }
-    }
-}
-
-@keyframes menu-init {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.menu__field {
     .menu-item {
+        @include box-shadow;
+        background: $white;
+        border-radius: 17px;
+        animation: menu-init 1s ease-in-out both;
+        overflow: hidden;
+        grid-template-columns: 1fr 60px;
+    
         &:nth-of-type(2) {
             animation-delay: 200ms;
         }
@@ -72,91 +41,135 @@
         &:nth-of-type(3) {
             animation-delay: 400ms;
         }
+
+        .menu-item__label {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            min-width: 0;;
+        }
+
+        .menu-item__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 0;;
+        }
+
+        .menu-item__name,
+        .menu-item__description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        .menu-item__info {
+            align-self: flex-end;
+            padding: 0 10px;
+            margin-right: -60px /*same as input width */;
+            transition: margin linear 400ms;
+        }
+
+        .menu-item__price {
+            font-weight: bolder;
+        }
+
+        .menu-item__input {
+            background: $color-tertiary;
+            place-content: center;
+            transform: translateX(60px);
+            transition: transform linear 400ms;
+        }
+
+        .menu-item__control {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 2rem;
+            color: $color-tertiary;
+            background: $white;
+            transform: rotate(0);
+            opacity: 0;
+            transition: transform linear 400ms,
+                        opacity linear 400ms;
+        }
+
+        .menu-item__label:focus {
+            .menu-item__info {
+                transition-duration: 0.01ms;
+                margin-right: 0;
+                //animation: item-info 500ms linear both;
+            }
+
+            & + .menu-item__input {
+                transition-duration: 0.01ms;
+                transform: translateX(0);
+                //animation: item-input 500ms linear both;
+
+                .menu-item__control {
+                    transition-duration: 0.01ms;
+                    opacity: 1;
+                    transform: rotate(360deg);
+                    //animation: item-control 500ms linear both;
+                }
+            }
+        }
+
+        &:hover {
+            .menu-item__info {
+                margin-right: 0;
+            }
+
+            .menu-item__input {
+                transform: translateX(0);
+
+                .menu-item__control {
+                    opacity: 1;
+                    transform: rotate(360deg);
+                }
+            }
+        }
     }
 }
 
-.menu-item__label {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    min-width: 0;
-    padding: 8px $site-side__padding;
-}
 
-.menu-item__content {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.menu-item__name,
-.menu-item__description {
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.menu-item__info {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: -60px; /* width of .menu-item__input */
-    transition: margin ease-in-out 400ms;
-}
-
-.menu-item__price {
-    font-weight: 500;
-    margin-top: auto;
-}
-
-.menu-item__input {
-    background: $color-tertiary;
-    display: grid;
-    flex-shrink: 0;
-    grid-template-areas: "menu-item__input";
-    margin-left: auto;
-    place-content: center;
-    transform-origin: right;
-    transform: translateX(60px);
-    transition: all ease-in-out 400ms;
-    width: 60px;
-    
-    >* {
-        grid-area: menu-item__input;
-    }
-
-    input {
-        height: 1em;
+@keyframes menu-init {
+    from {
         opacity: 0;
-        width: 1em;
+        transform: translateY(50%);
     }
-}
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+};
 
-.menu-item__control {
-    background: $white;
-    border-radius: 20px;
-    border: 0;
-    color: $color-tertiary;
-    display: inline-grid;
-    height: 20px;
-    opacity: 0;
-    transform-origin: center center;
-    transform: rotate(0deg);
-    transition: all ease-in-out 400ms;
-    width: 20px;
-}
+@keyframes item-info {
+    from {
+        margin-right: -60px;
+    }
+    to {
+        margin-right: 0;
+    }
+};
 
-.menu-item__control svg {
-    transform-origin: bottom left;
-    transform: scale(0);
-    transition: transform 0.1s ease-in 25ms;
-}
+@keyframes item-input {
+    from {
+        transform: translateX(60px);
+    }
+    to {
+        transform: translateX(0);
+    }
+};
 
-.menu-item__input input:checked + .menu-item__control svg {
-    transform: scale(1);
-}
-
-.menu-item__input input:focus + .menu-item__control {
-    box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
-}
+@keyframes item-control {
+    from {
+        opacity: 0;
+        transform: rotate(0);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+};
