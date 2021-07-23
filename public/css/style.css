@@ -176,7 +176,7 @@ a {
 }
 
 a:visited {
-  color: #9356DC;
+  color: currentColor;
 }
 
 a:focus {
@@ -548,9 +548,6 @@ button {
   width: 1em;
   height: 1em;
 }
-.checkbox__input input:focus + .checkbox__control {
-  box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
-}
 .checkbox__input input:checked + .checkbox__control svg {
   transform: scale(1);
 }
@@ -865,12 +862,8 @@ button {
   color: #000;
   border: 0;
 }
-.post__link:visited {
-  color: #000;
-}
-.post__link:hover {
-  color: #000;
-  background: #FF79DA;
+.post__link:hover .post__title {
+  text-decoration: underline;
 }
 
 .post__thumb {
