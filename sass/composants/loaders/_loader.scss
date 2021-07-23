@@ -99,21 +99,21 @@
         &:nth-of-type(2) {
             background: $color-secondary;
             background: linear-gradient(0deg, darken($color-secondary, 10) 0%, $color-secondary 100%);
-            animation-delay: $delay;
+            animation-delay: $delay*2;
         }
 
         &:nth-of-type(3) {
             background: $color-tertiary;
             background: linear-gradient(0deg, darken($color-tertiary, 10) 0%, $color-tertiary 100%);
-            animation-delay: $delay*2;
-        }
-
-        &:nth-of-type(5) {
             animation-delay: $delay;
         }
 
-        &:nth-of-type(6) {
+        &:nth-of-type(5) {
             animation-delay: $delay*2;
+        }
+
+        &:nth-of-type(6) {
+            animation-delay: $delay;
         }
     }
 

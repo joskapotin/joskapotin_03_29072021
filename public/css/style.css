@@ -276,10 +276,7 @@ button {
   top: 1px;
 }
 
-/*
- * Solution in pure css.
- */
-.btn-like.pure-css {
+.btn-like {
   cursor: pointer;
   display: grid;
   grid-template-areas: "btn-like";
@@ -291,25 +288,25 @@ button {
   transform: rotate(-45deg);
   width: 28px;
 }
-.btn-like.pure-css .like-check {
+.btn-like .like-check {
   grid-area: btn-like;
   opacity: 0;
   width: 1em;
   height: 1em;
 }
-.btn-like.pure-css .like-check:checked ~ .heart-fill {
+.btn-like .like-check:checked ~ .heart-fill {
   transform: scale(1);
 }
-.btn-like.pure-css .like-check:focus-visible + .heart-stroke {
+.btn-like .like-check:focus-visible + .heart-stroke {
   box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
 }
-.btn-like.pure-css .heart-shape {
+.btn-like .heart-shape {
   grid-area: btn-like;
   position: relative;
   height: 28px;
   width: 28px;
 }
-.btn-like.pure-css .heart-shape::before, .btn-like.pure-css .heart-shape::after {
+.btn-like .heart-shape::before, .btn-like .heart-shape::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -317,205 +314,43 @@ button {
   height: 28px;
   border-radius: 18px 18px 0 0;
 }
-.btn-like.pure-css .heart-shape::after {
+.btn-like .heart-shape::after {
   width: 28px;
   height: 18px;
   border-radius: 0 18px 18px 0;
 }
-.btn-like.pure-css .heart-bg {
+.btn-like .heart-bg {
   top: 1px;
   left: 1px;
   height: 26px;
   width: 26px;
 }
-.btn-like.pure-css .heart-bg::before, .btn-like.pure-css .heart-bg::after {
+.btn-like .heart-bg::before, .btn-like .heart-bg::after {
   width: 16px;
   height: 26px;
   border-radius: 16px 16px 0 0;
 }
-.btn-like.pure-css .heart-bg::after {
+.btn-like .heart-bg::after {
   width: 26px;
   height: 16px;
   border-radius: 0 16px 16px 0;
 }
-.btn-like.pure-css .heart-stroke::before, .btn-like.pure-css .heart-stroke::after {
+.btn-like .heart-stroke::before, .btn-like .heart-stroke::after {
   background-color: #101010;
 }
-.btn-like.pure-css .heart-bg::before, .btn-like.pure-css .heart-bg::after {
+.btn-like .heart-bg::before, .btn-like .heart-bg::after {
   background-color: #fff;
 }
-.btn-like.pure-css .heart-fill::before, .btn-like.pure-css .heart-fill::after {
+.btn-like .heart-fill::before, .btn-like .heart-fill::after {
   background: #9356DC;
   background: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
 }
-.btn-like.pure-css .heart-fill {
+.btn-like .heart-fill {
   transform-origin: bottom left;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
 
-/*
- * Solution svg-v1.
- */
-.svg-v1 {
-  padding: 0;
-}
-.svg-v1 .hearts {
-  display: block;
-  position: relative;
-  width: 23px;
-  height: 23px;
-}
-.svg-v1 .hearts svg {
-  overflow: visible;
-  clip-path: url(#cut-off-heart);
-}
-.svg-v1 .hearts .heart-main {
-  overflow: visible;
-  stroke: #000;
-  width: 23px;
-  height: 23px;
-  stroke-width: 1px;
-  fill: transparent;
-  z-index: 10;
-}
-.svg-v1 .hearts .heart-fill-clip {
-  stroke-width: 1px;
-}
-.svg-v1 .hearts .heart-fill {
-  width: 23px;
-  height: 23px;
-  stroke: none;
-  fill: url(#primary-gradient) #9356DC;
-  transform: translatey(23px);
-}
-.svg-v1:hover .heart-fill {
-  animation: fill-animation 2s ease-in-out forwards;
-}
-
-@keyframes fill-animation {
-  0% {
-    transform: translatey(23px);
-  }
-  100% {
-    transform: translatey(0);
-  }
-}
-/*
- * Solution svg-v2.
- */
-.svg-v2 {
-  padding: 0;
-}
-.svg-v2 .hearts {
-  position: relative;
-  width: 23px;
-  height: 23px;
-  stroke: #000;
-  stroke-width: 1px;
-  fill: transparent;
-  z-index: 10;
-}
-.svg-v2 .hearts svg {
-  overflow: visible;
-  width: 23px;
-  height: 23px;
-}
-.svg-v2 .hearts path {
-  stroke-dashoffset: 0;
-  stroke-dasharray: 73;
-  transform-origin: center;
-}
-.svg-v2 .hearts .heart-background {
-  position: absolute;
-  left: 0;
-  right: 0;
-  stroke: none;
-  z-index: -1;
-  overflow: hidden;
-}
-
-/*
- * Solution SVG demo
- */
-.svg-demo {
-  padding: 0;
-}
-.svg-demo .hearts {
-  position: relative;
-  width: 23px;
-  height: 23px;
-  stroke: #000;
-  stroke-width: 1px;
-  fill: transparent;
-  z-index: 10;
-}
-.svg-demo .hearts svg {
-  overflow: visible;
-  width: 23px;
-  height: 23px;
-}
-.svg-demo .hearts path {
-  stroke-dashoffset: 0;
-  stroke-dasharray: 73;
-  transform-origin: center;
-}
-.svg-demo .hearts .heart-background {
-  position: absolute;
-  left: 0;
-  right: 0;
-  stroke: none;
-  z-index: -1;
-}
-.svg-demo:hover .heart-main path {
-  animation: stroke-animation 2s ease-in-out forwards;
-}
-.svg-demo:hover .heart-background {
-  animation: fade-animation 2s ease-in-out forwards;
-}
-
-@keyframes stroke-animation {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  30% {
-    stroke-dashoffset: 73;
-  }
-  60% {
-    stroke-dashoffset: 146;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: url(#primary-gradient) #9356DC;
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 146;
-    fill: url(#primary-gradient) #9356DC;
-  }
-}
-@keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: url(#primary-gradient) #9356DC;
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-}
 .checkbox {
   display: grid;
   grid-template-columns: min-content auto;
@@ -645,18 +480,18 @@ button {
 .loader div:nth-of-type(2) {
   background: #FF79DA;
   background: linear-gradient(0deg, #ff46cc 0%, #FF79DA 100%);
-  animation-delay: 0.15s;
+  animation-delay: 0.3s;
 }
 .loader div:nth-of-type(3) {
   background: #99E2D0;
   background: linear-gradient(0deg, #71d7be 0%, #99E2D0 100%);
-  animation-delay: 0.3s;
-}
-.loader div:nth-of-type(5) {
   animation-delay: 0.15s;
 }
-.loader div:nth-of-type(6) {
+.loader div:nth-of-type(5) {
   animation-delay: 0.3s;
+}
+.loader div:nth-of-type(6) {
+  animation-delay: 0.15s;
 }
 @keyframes jump {
   0% {
