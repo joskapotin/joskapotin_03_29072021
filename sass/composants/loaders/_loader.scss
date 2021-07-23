@@ -54,7 +54,6 @@
     $jump: -110px;
     $duration: 1s;
     $delay: .15s;
-
     margin: auto;
     display: grid;
     grid-template-columns: repeat($ball-nbr, minmax(0, 1fr));
@@ -68,6 +67,14 @@
         z-index: 999;
         transform-origin: center;
         animation: jump $duration infinite both;
+
+        &:active {
+            animation-play-state: paused;
+
+            + div + div + div {
+                animation-play-state: paused;
+            }
+        }
     }
 
     .shadow {

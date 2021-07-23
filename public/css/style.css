@@ -1,8 +1,3 @@
-#primary-gradient {
-  --color-stop-1: #FF79DA;
-  --color-stop-2: #9356DC;
-}
-
 /* Generic
 --------------------------------------------- */
 /* Box sizing rules */
@@ -264,7 +259,7 @@ button {
   z-index: 1;
 }
 .btn::before {
-  box-shadow: 0px 2px 5px rgba(172, 102, 255, 0.5);
+  box-shadow: 0px 2px 5px rgba(121, 72, 182, 0.5);
   background: #a16be0;
   background: linear-gradient(355deg, #ac66ff 0%, #ff93e1 100%);
   border-radius: 50vh;
@@ -615,6 +610,12 @@ button {
   z-index: 999;
   transform-origin: center;
   animation: jump 1s infinite both;
+}
+.loader .ball:active {
+  animation-play-state: paused;
+}
+.loader .ball:active + div + div + div {
+  animation-play-state: paused;
 }
 .loader .shadow {
   background-color: black;

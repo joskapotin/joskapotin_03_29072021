@@ -19,7 +19,7 @@ button {
     z-index: 1;
 
     &::before {
-        @include box-shadow(0px, 2px, 5px, rgba(172, 102, 255, .5));
+        @include box-shadow(0px, 2px, 5px, rgba(121, 72, 182, 0.5));
         background: $color-btn--hover;
         background: $gradient-btn--hover;
         border-radius: 50vh;
