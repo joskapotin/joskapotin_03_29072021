@@ -1,13 +1,10 @@
-.container {
+.container,
+.container-small,
+.container-medium {
     margin: 0 auto;
     max-width: $container-size;
     padding-left: $site-gap;
     padding-right: $site-gap;
-}
-
-.container-small {
-    @extend .container;
-    max-width: $container-size;
 }
 
 .container-large {
@@ -15,11 +12,17 @@
     max-width: $container-size__max;
 }
 
-@media (min-width: $medium) {
-    .container {
+@media (min-width: $small) {
+    .container,
+    .container-small,
+    .container-medium,
+    .container-large {
         padding-left: $site-gap*2;
         padding-right: $site-gap*2;
     }
+}
+
+@media (min-width: $medium) {
     .container-medium {
         max-width: $container-size__max;
     }

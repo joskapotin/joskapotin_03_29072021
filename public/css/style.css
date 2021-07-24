@@ -204,27 +204,29 @@ img {
   object-fit: cover;
 }
 
-.container, .container-large, .container-small {
+.container, .container-large,
+.container-small,
+.container-medium {
   margin: 0 auto;
   max-width: 600px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.container-small {
-  max-width: 600px;
-}
-
 .container-large {
   max-width: 1440px;
 }
 
-@media (min-width: 992px) {
-  .container, .container-small, .container-large {
+@media (min-width: 768px) {
+  .container,
+.container-small,
+.container-medium,
+.container-large {
     padding-left: 40px;
     padding-right: 40px;
   }
-
+}
+@media (min-width: 992px) {
   .container-medium {
     max-width: 1440px;
   }
@@ -722,10 +724,14 @@ button {
   grid-template-columns: minmax(0, 1fr);
   gap: 20px;
 }
+@media (min-width: 768px) {
+  .posts {
+    gap: 40px;
+  }
+}
 @media (min-width: 992px) {
   .posts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 40px;
   }
 }
 .posts .post {
