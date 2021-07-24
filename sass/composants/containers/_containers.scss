@@ -14,7 +14,6 @@
 
 @media (min-width: $small) {
     .container,
-    .container-small,
     .container-medium,
     .container-large {
         padding-left: $site-gap*2;
@@ -31,5 +30,7 @@
 @media (min-width: $large) {
     .container-small {
         max-width: $container-size__max;
+        padding-left: $site-gap*2;
+        padding-right: $site-gap*2;
     }
 }

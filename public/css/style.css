@@ -219,7 +219,6 @@ img {
 
 @media (min-width: 768px) {
   .container,
-.container-small,
 .container-medium,
 .container-large {
     padding-left: 40px;
@@ -234,6 +233,8 @@ img {
 @media (min-width: 1200px) {
   .container-small {
     max-width: 1440px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 button {
