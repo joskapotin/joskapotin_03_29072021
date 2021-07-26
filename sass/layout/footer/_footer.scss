@@ -48,12 +48,18 @@
 
         }
 
-        span {
+        &::before {
             margin-right: 15px;
+        }
 
-            .fas {
-                width: 13px;
-            }
+        &:nth-of-type(1)::before {
+            @include icon;
+            content: "\f2e7";
+        }
+
+        &:nth-of-type(2)::before {
+            @include icon;
+            content: "\f4c4";
         }
     }
 }

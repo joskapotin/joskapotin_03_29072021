@@ -1,0 +1,26 @@
+.section-posts {
+    background: $color__background;
+    padding-top: 58px;
+    padding-bottom: 64px;
+
+    .section-title {
+        margin-bottom: $site-gap*2;
+
+        @media (min-width: $small) {
+            text-align: center;
+            margin-bottom: $site-gap*2;
+        }  
+    }
+}
+
+.section-operations {
+    padding-top: 50px;
+    padding-bottom: 70px;
+
+    .section-title {
+        @media (min-width: $small) {
+            text-align: center;
+            margin-bottom: $site-gap*2;
+        }  
+    }
+}

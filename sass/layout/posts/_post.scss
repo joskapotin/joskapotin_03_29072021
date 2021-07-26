@@ -1,84 +1,45 @@
-.page-post {
-    .post {
-        position: relative;
-        padding-top: 220px;
-        background: $white;
-    
-        @media (min-width: $container-size+$site-gap*2) and (max-width: $large) {
-            &::after {
-                background: $grey-dark;
-                bottom: 0;
-                content: "";
-                height: 20px;
-                left: 0;
-                position: absolute;
-                right: 0;
-            }
-        }
+.post__link {
+    grid-area: restaurant;
+    color: $color__text-main;
+    border: 0;
+    display: grid;
+    grid-template-areas:    "image"
+                            "text";
+}
 
-        @media (min-width: $container-size__max+$site-gap*2) {
-            &::after {
-                background: $grey-dark;
-                bottom: 0;
-                content: "";
-                height: 20px;
-                left: 0;
-                position: absolute;
-                right: 0;
-            }
-        }
+.post__picture {
+    grid-area: image;
+}
 
-        
-    
-        .post__thumb {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 5;
-        }
-    
-        .post__img img {
-            height: 257px;
-            border-radius: 0;
-        }
-        
-        .post-content {
-            @include box-shadow;
-            position: relative;
-            background: $color__background;
-            border-radius: 37px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-            padding-top: 30px;
-            padding-bottom: 12px;
-            z-index: 10;
+.post__img {
+    height: 174px;
 
-            @media (min-width: $container-size+$site-gap*2) and (max-width: $large) {
-                border-radius: 37px;
-            }
-
-            @media (min-width: $container-size__max+$site-gap*2) {
-                border-radius: 37px;
-            }
-
-        }
-    
-        .post__header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            position: relative;
-    
-            @media (min-width: $large) {
-                justify-content: center;
-            }
-        }
-    
-        .btn-like {
-            margin-left: 50px;
-        }
+    @media (min-width: $medium) {
+        height: 250px;
     }
+}
+
+.meta-info {
+    grid-area: image;
+    margin: 13px 11px auto auto;
+    padding: 5px 13px;
+    background-color: $color-tertiary;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.post__title,
+.post__description {
+    margin: 0;
+    padding: 10px 90px 0 14px;
+}
+
+.post__description {
+    padding-top: 0;
+    padding-bottom: 18px;
+}
+
+.btn-like {
+    grid-area: restaurant;
+    margin: auto 24px 33px auto;
 }

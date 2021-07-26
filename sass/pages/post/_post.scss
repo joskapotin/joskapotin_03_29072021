@@ -1,0 +1,105 @@
+.page-post {
+    .main-content {
+        position: relative;
+        padding-top: 210px;
+
+        @media (min-width: $container-size+$site-gap*2) and (max-width: $large) {
+            &::after {
+                background: $grey-dark;
+                bottom: 0;
+                content: "";
+                height: $site-gap;
+                left: 0;
+                position: absolute;
+                right: 0;
+                z-index: -1;
+            }
+        }
+
+        @media (min-width: $container-size__max+$site-gap*2) {
+            &::after {
+                background: $grey-dark;
+                bottom: 0;
+                content: "";
+                height: $site-gap;
+                left: 0;
+                position: absolute;
+                right: 0;
+                z-index: -1;
+            }
+        }
+    }
+
+    .section-post {
+        @include box-shadow;
+        background: $white;
+        border-top-left-radius: 37px;
+        border-top-right-radius: 37px;
+        overflow: hidden;
+
+        @media (min-width: $container-size+$site-gap*2) and (max-width: $large) {
+            border-bottom-left-radius: 37px;
+            border-bottom-right-radius: 37px;
+        }
+
+        @media (min-width: $container-size__max+$site-gap*2) {
+            border-bottom-left-radius: 37px;
+            border-bottom-right-radius: 37px;
+        }
+    }
+
+    .post__picture {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .post__img {
+        height: 257px;
+        border-radius: 0;
+    }
+
+    .post__header {
+        align-items: flex-start;
+        background: $white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 30px;
+
+        @media (min-width: $large) {
+            justify-content: center;
+        }
+    }
+
+    .post__title {
+        padding: 0;
+    }
+
+    .btn-like {
+        margin: 0 50px 0;
+    }
+
+    .post__form {
+        margin-top: 50px;
+        padding-bottom: 55px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 50px;
+    
+        @media (min-width: $large) {
+            grid-template-columns: repeat(3, minmax(0, 400px));
+            justify-content: space-between;
+
+            .btn {
+                grid-column: 2/3;
+            }
+        }
+
+        .btn {
+            margin-top: 0;
+        }
+    }
+}

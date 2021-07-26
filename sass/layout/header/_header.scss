@@ -4,15 +4,12 @@
     grid-template-areas: "site-header";
     align-items: center;
 
-    .branding {
+    .logo {
+        color: $color__logo;
+        font-family: $font__heading;
+        font-size: 3rem;
         grid-area: site-header;
         justify-self: center;
-    }
-
-    .logo {
-        font-family: $font__heading;
-        color: $color__logo;
-        font-size: 3rem;
         margin: 0;
     }
 
@@ -20,11 +17,15 @@
         grid-area: site-header;
         justify-self: start;
         
-        a:link {
+        a {
             padding: 1em 1em 1em 0;
             color: $grey-dark;
             border: 0;
             font-size: 1.6rem;
+            &::before {
+                @include icon;
+                content: "\f060";
+            }
         }
 
     }

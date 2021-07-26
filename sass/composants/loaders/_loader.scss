@@ -1,7 +1,6 @@
 .modal-box {
     @include box-shadow;
-    background-color: rgba(255, 255, 255, 10);
-    border-radius: 15px;
+    background-color: $white;
     display: grid;
     place-content: center;
     top: 0;
@@ -14,7 +13,7 @@
     transform-origin: center;
     transform: scale(0);
     z-index: 1000;
-    animation: modal-init 5s linear forwards;
+    //animation: modal-init 5s linear forwards;
 
     .heading {
         display: block;
