@@ -1,3 +1,17 @@
+.section-operations {
+    padding-top: 50px;
+    padding-bottom: 70px;
+
+    .section-title {
+        @media (min-width: $small) {
+            text-align: center;
+        }
+        @media (min-width: $medium) {
+            margin-bottom: $site-gap*2;
+        }
+    }
+}
+
 .operations__list {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -9,6 +23,7 @@
 
     @media (min-width: $medium) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: $site-gap*2;
     }
 
     .operation {

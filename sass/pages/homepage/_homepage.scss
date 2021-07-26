@@ -1,14 +1,16 @@
 .posts {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, $image-width__max);
+    justify-content: center;
     gap: $site-gap;
 
     @media (min-width: $small) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: $site-gap*2;
     }
 
     @media (min-width: $medium) {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: $site-gap*3;
     }
 
     .post {

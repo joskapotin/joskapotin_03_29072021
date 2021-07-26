@@ -1,36 +1,27 @@
-.container,
 .container-small,
-.container-medium {
+.container-medium,
+.container-large {
     margin: 0 auto;
     max-width: $container-size;
+    min-width: $container-size__min;
     padding-left: $site-gap;
     padding-right: $site-gap;
 }
 
-.container-large {
-    @extend .container;
-    max-width: $container-size__max;
-}
-
 @media (min-width: $small) {
-    .container,
-    .container-medium,
     .container-large {
-        padding-left: $site-gap*2;
-        padding-right: $site-gap*2;
+        max-width: $container-size__max;
     }
 }
 
 @media (min-width: $medium) {
     .container-medium {
-        max-width: $container-size__max;
+        max-width: $large;
     }
 }
 
 @media (min-width: $large) {
     .container-small {
         max-width: $container-size__max;
-        padding-left: $site-gap*2;
-        padding-right: $site-gap*2;
     }
 }
