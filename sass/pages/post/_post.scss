@@ -87,8 +87,8 @@
         padding-bottom: 55px;
         display: grid;
         grid-template-columns: minmax(0, 1fr);
-        gap: 50px;
-    
+        gap: $site-gap;
+
         @media (min-width: $large) {
             grid-template-columns: repeat(3, minmax(0, 400px));
             justify-content: space-between;
@@ -96,10 +96,6 @@
             .btn {
                 grid-column: 2/3;
             }
-        }
-
-        .btn {
-            margin-top: 0;
         }
     }
 }

@@ -1,29 +1,29 @@
 a {
-	border-bottom: 1px dotted currentColor;
-	color: $color__link;
-	outline: solid transparent;
-	position: relative;
-	text-decoration: none;
-	transition: all ease-in-out 200ms;
+    border-bottom: 1px dotted currentColor;
+    color: $color__link;
+    outline: solid transparent;
+    position: relative;
+    text-decoration: none;
+    transition: all ease-in-out 200ms;
 }
 
 a:visited {
-	color: currentColor;
+    color: currentColor;
 }
 
 a:focus {
-	border-bottom-style: solid;
-	background: $color-tertiary;
-	color: $color__link--hover;
+    border-bottom-style: solid;
+    background: $color-tertiary;
+    color: $color__link--hover;
 }
 
 a:hover {
-	border-bottom-style: solid;
-	color: $color__link--hover;
+    border-bottom-style: solid;
+    color: $color__link--hover;
 }
 
 a:active {
-	background: $color-secondary;
-	color: $color__link--hover;
-	top: 1px;
+    background: $color-secondary;
+    color: $color__link--hover;
+    top: 1px;
 }

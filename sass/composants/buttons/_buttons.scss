@@ -35,15 +35,15 @@ button {
     }
 
     &:hover::before {
-            opacity: 1;
-        }
+        opacity: 1;
+    }
 
     &:active {
         top: 1px;
     }
 }
 
- .btn-like {
+.btn-like {
     cursor: pointer;
     display: grid;
     grid-template-areas: "btn-like";
@@ -61,11 +61,11 @@ button {
         width: 1em;
         height: 1em;
 
-        &:checked ~ .heart-fill {
+        &:checked~.heart-fill {
             transform: scale(1);
         }
 
-        &:focus-visible + .heart-stroke {
+        &:focus-visible+.heart-stroke {
             box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
         }
 
@@ -110,18 +110,20 @@ button {
         &::after {
             width: 26px;
             height: 16px;
-            border-radius: 0 16px 16px 0 ;
+            border-radius: 0 16px 16px 0;
         }
     }
 
     .heart-stroke {
+
         &::before,
         &::after {
             background-color: $grey-darker;
         }
     }
-        
+
     .heart-bg {
+
         &::before,
         &::after {
             background-color: $white;
@@ -129,6 +131,7 @@ button {
     }
 
     .heart-fill {
+
         &::before,
         &::after {
             background: $color-primary;
@@ -142,4 +145,3 @@ button {
         transition: all .2s ease-in-out;
     }
 }
-

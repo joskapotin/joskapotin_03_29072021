@@ -25,13 +25,13 @@
             gap: 30px;
         }
     }
-        
+
     li {
         margin-top: 2px;
 
         a {
             color: $white;
-            border-color:transparent;
+            border-color: transparent;
 
             &:focus {
                 color: $color__link--hover;

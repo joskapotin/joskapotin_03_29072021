@@ -25,7 +25,7 @@
     display: grid;
     grid-template-areas: "checkbox";
 
-    >* {
+    > * {
         grid-area: checkbox;
     }
 
@@ -38,11 +38,11 @@
             box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
         }
 
-        &:checked+.checkbox__control svg {
+        &:checked + .checkbox__control svg {
             transform: scale(1);
         }
 
-        &:disabled+.checkbox__control {
+        &:disabled + .checkbox__control {
             color: var(--disabled);
         }
     }
