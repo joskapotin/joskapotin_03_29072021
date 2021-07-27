@@ -4,9 +4,11 @@
   "description": "openclassroom project03",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/style.scss:./public/css/style.css",
-    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+    "scss": "sass --watch ./sass/style.scss:./public/css/style.css",
+    "autoprefixer": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/",
+    "build:css": "npm run scss && npm run autoprefixer"
   },
+  "browserslist": "last 4 versions",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joskapotin/joskapotin_03_29072021.git"

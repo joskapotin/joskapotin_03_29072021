@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="public/css/style.css" />
 </head>
 
-<body>
+<body class="page-home">
     <header class="site-header">
         <span class="logo">ohmyfood</span>
     </header>
 
-    <main class="main-content">
+    <nav class="search-nav">
         <form action="#" method="post" name="location-search" class="location__form">
             <label class="location__input"><span class="visually-hidden">Rechercher un lieu</span>
                 <input type="text" name="location" value="Paris, Belleville" aria-label="nom du lieu" />
@@ -34,115 +34,133 @@
 
             <button class="btn" type="submit">Explorer nos restaurants</button>
         </form>
+    </nav>
 
-        <section class="section-operations container-medium">
-            <h2 class="section-title">Fonctionnement</h2>
-            <ol class="operations__list">
-                <li class="operation">
-                    <span class="operation__text">Choisissez un restaurant</span>
-                </li>
-                <li class="operation">
-                    <span class="operation__text">Composez votre menu</span>
-                </li>
-                <li class="operation">
-                    <span class="operation__text">Dégustez au restaurant</span>
-                </li>
-            </ol>
-        </section>
+    <aside class="section-operations container-medium">
+        <h2 class="section-title">Fonctionnement</h2>
+        <ol class="operations__list">
+            <li class="operation">
+                <span class="operation__text">Choisissez un restaurant</span>
+            </li>
+            <li class="operation">
+                <span class="operation__text">Composez votre menu</span>
+            </li>
+            <li class="operation">
+                <span class="operation__text">Dégustez au restaurant</span>
+            </li>
+        </ol>
+    </aside>
 
-        <section class="section-posts">
-            <h2 class="section-title container-large">Restaurants</h2>
+    <main class="main-content section-posts">
+        <h2 class="section-title container-large">Restaurants</h2>
 
-            <div class="posts container-large">
-                <article class="post">
-                    <a href="la-palette-du-gout-form.html" class="post__link">
-                        <picture class="post__picture">
-                            <source srcset="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
-                            <img class="post__img" src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant" />
-                        </picture>
+        <div class="posts container-large">
+            <article class="post">
+                <a href="la-palette-du-gout-form.html" class="post__link">
+                    <picture class="post__picture">
+                        <source srcset="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
+                        <img class="post__img" src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant" />
+                    </picture>
 
-                        <aside class="meta-info">
-                            <span>Nouveau</span>
-                        </aside>
+                    <aside class="meta-info">
+                        <span>Nouveau</span>
+                    </aside>
 
-                        <h3 class="post__title">La palette du goût</h3>
-                        <p class="post__description">Ménilmontant</p>
-                    </a>
+                    <h3 class="post__title">La palette du goût</h3>
+                    <p class="post__description">Ménilmontant</p>
+                </a>
 
-                    <label class="btn-like">
+                <label class="btn-like">
+                    <span class="visually-hidden">j'aime</span>
+                    <input class="like-check" type="checkbox" aria-label="J'aime" aria-label="J'aime" />
+                    <span class="heart-shape heart-stroke"></span>
+                    <span class="heart-shape heart-bg"></span>
+                    <span class="heart-shape heart-fill"></span>
+                </label>
+            </article>
+
+            <article class="post">
+                <a href="#" class="post__link">
+                    <picture class="post__picture">
+                        <source srcset="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" />
+                        <img class="post__img" src="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="restaurant" />
+                    </picture>
+
+                    <aside class="meta-info">
+                        <span>Nouveau</span>
+                    </aside>
+
+                    <h3 class="post__title">La note enchantée</h3>
+                    <p class="post__description">Charonne</p>
+                </a>
+
+                <button class="like-button">
+                    <span class="liked">
                         <span class="visually-hidden">j'aime</span>
-                        <input class="like-check" type="checkbox" aria-label="J'aime" aria-label="J'aime" />
-                        <span class="heart-shape heart-stroke"></span>
-                        <span class="heart-shape heart-bg"></span>
-                        <span class="heart-shape heart-fill"></span>
-                    </label>
-                </article>
+                    </span>
+                </button>
+            </article>
 
-                <article class="post">
-                    <a href="#" class="post__link">
-                        <picture class="post__picture">
-                            <source srcset="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" />
-                            <img class="post__img" src="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="restaurant" />
-                        </picture>
+            <article class="post">
+                <a href="#" class="post__link">
+                    <picture class="post__picture">
+                        <source srcset="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" />
+                        <img class="post__img" src="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="restaurant" />
+                    </picture>
 
-                        <aside class="meta-info">
-                            <span>Nouveau</span>
-                        </aside>
+                    <h3 class="post__title">A la française</h3>
+                    <p class="post__description">Cité Rouge</p>
+                </a>
 
-                        <h3 class="post__title">La note enchantée</h3>
-                        <p class="post__description">Charonne</p>
-                    </a>
+                <button class="btn-like-svg">
+                    <span class="visually-hidden">j'aime</span>
+                    <svg id="hearts" class="hearts" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                          <linearGradient id="heart-gradient" x1="0" y1="1" x2="1" y2="0">
+                            <stop id="heart-gradient-0" offset="0%" stop-color="rgb(255,121,218)" />
+                            <stop id="heart-gradient-1" offset="100%" stop-color="rgb(147,86,220)" />
+                          </linearGradient>
+                        </defs>
+                    
+                        <path class="heart-stroke" d="m 7.1348312,0.5 c -1.772865,0 -3.440279,0.7865889 -4.691406,2.2109379 -1.256345,1.4295651 -1.94857594,3.3265724 -1.94335894,5.3457029 0,2.0201742 0.69677994,3.9141852 1.95312494,5.3437502 l 9.5546868,10.867188 a 0.65217231,0.65217391 0 0 0 0.484375,0.232422 0.64591146,0.64591304 0 0 0 0.484375,-0.226562 L 22.550847,13.421876 C 23.808235,11.993354 24.500066,10.095437 24.500066,8.0742189 24.505266,6.0540449 23.818,4.1561278 22.560612,2.7265629 21.304267,1.2969979 19.640252,0.517578 17.8653,0.517578 c -1.775997,0 -3.443783,0.7872319 -4.701172,2.2167969 l -0.65625,0.746094 -0.666016,-0.757813 C 10.584473,1.2930909 8.9097829,0.5 7.1348312,0.5 Z" all="inherit" stroke-width="1" />
+                        <path class="heart-fill" d="m 7.1347959,3.1151252e-5 c -1.920757,0 -3.730151,0.859596998748 -5.066406,2.380859648748 -1.341013,1.525906 -2.073874,3.5415659 -2.068358999164,5.675781 0,2.1351422 0.737735999164,4.1486312 2.078124999164,5.6738282 l 9.5468751,10.857422 c 0.212818,0.253244 0.524762,0.404549 0.855468,0.412109 h 0.0098 0.0078 c 0.330151,-0.0035 0.642715,-0.151595 0.857422,-0.402343 h 0.002 l 9.568362,-10.845703 c 1.342407,-1.525113 2.074219,-3.542424 2.074219,-5.6777351 0.0055,-2.1343771 -0.719845,-4.1512261 -2.0625,-5.6777341 -1.341372,-1.52631365 -3.150943,-2.37890565 -5.072267,-2.37890565 -1.923749,0 -3.734097,0.860872 -5.076172,2.38671765 l -0.279297,0.31836 -0.291015,-0.330078 C 10.876624,0.86659015 9.0587579,3.1151252e-5 7.1348659,3.1151252e-5 Z" all="inherit" transform-origin="bottom" transform="scale(0)" fill="url(#heart-gradient)">
+                          <animateTransform dur="0.3s" attributeName="transform" type="scale" from="0" to="1" begin="startAnimation.begin" fill="freeze" />
+                          <animateTransform dur="0.3s" attributeName="transform" type="scale" from="1" to="0" begin="reverseAnimation.begin" fill="freeze" />
+                        </path>
+                    
+                        <path d="m 7.1347959,3.1151252e-5 c -1.920757,0 -3.730151,0.859596998748 -5.066406,2.380859648748 -1.341013,1.525906 -2.073874,3.5415659 -2.068358999164,5.675781 0,2.1351422 0.737735999164,4.1486312 2.078124999164,5.6738282 l 9.5468751,10.857422 c 0.212818,0.253244 0.524762,0.404549 0.855468,0.412109 h 0.0098 0.0078 c 0.330151,-0.0035 0.642715,-0.151595 0.857422,-0.402343 h 0.002 l 9.568362,-10.845703 c 1.342407,-1.525113 2.074219,-3.542424 2.074219,-5.6777351 0.0055,-2.1343771 -0.719845,-4.1512261 -2.0625,-5.6777341 -1.341372,-1.52631365 -3.150943,-2.37890565 -5.072267,-2.37890565 -1.923749,0 -3.734097,0.860872 -5.076172,2.38671765 l -0.279297,0.31836 -0.291015,-0.330078 C 10.876624,0.86659015 9.0587579,3.1151252e-5 7.1348659,3.1151252e-5 Z" fill-opacity="0" transform="scale(1)">
+                          <animateTransform dur="0.01s" id="startAnimation" attributeName="transform" type="scale" from="1" to="0" fill="freeze" begin="click" />
+                          <animateTransform dur="0.01s" attributeName="transform" type="scale" from="0" to="1" fill="freeze" begin="reverseAnimation.end" />
+                        </path>
+                    
+                        <path d="m 7.1347959,3.1151252e-5 c -1.920757,0 -3.730151,0.859596998748 -5.066406,2.380859648748 -1.341013,1.525906 -2.073874,3.5415659 -2.068358999164,5.675781 0,2.1351422 0.737735999164,4.1486312 2.078124999164,5.6738282 l 9.5468751,10.857422 c 0.212818,0.253244 0.524762,0.404549 0.855468,0.412109 h 0.0098 0.0078 c 0.330151,-0.0035 0.642715,-0.151595 0.857422,-0.402343 h 0.002 l 9.568362,-10.845703 c 1.342407,-1.525113 2.074219,-3.542424 2.074219,-5.6777351 0.0055,-2.1343771 -0.719845,-4.1512261 -2.0625,-5.6777341 -1.341372,-1.52631365 -3.150943,-2.37890565 -5.072267,-2.37890565 -1.923749,0 -3.734097,0.860872 -5.076172,2.38671765 l -0.279297,0.31836 -0.291015,-0.330078 C 10.876624,0.86659015 9.0587579,3.1151252e-5 7.1348659,3.1151252e-5 Z" fill-opacity="0" transform="scale(0)">
+                          <animateTransform dur="0.01s" id="reverseAnimation" attributeName="transform" type="scale" from="1" to="0" fill="freeze" begin="click" />
+                          <animateTransform dur="0.01s" attributeName="transform" type="scale" from="0" to="1" fill="freeze" begin="startAnimation.end" />
+                        </path>
+                      </svg>
+                </button>
+            </article>
 
-                    <label class="btn-like">
-                        <span class="visually-hidden">j'aime</span>
-                        <input class="like-check" type="checkbox" aria-label="J'aime" />
-                        <span class="heart-shape heart-stroke"></span>
-                        <span class="heart-shape heart-bg"></span>
-                        <span class="heart-shape heart-fill"></span>
-                    </label>
-                </article>
+            <article class="post">
+                <a href="#" class="post__link">
+                    <picture class="post__picture">
+                        <source srcset="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" />
+                        <img class="post__img" src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="restaurant" />
+                    </picture>
 
-                <article class="post">
-                    <a href="#" class="post__link">
-                        <picture class="post__picture">
-                            <source srcset="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" />
-                            <img class="post__img" src="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="restaurant" />
-                        </picture>
+                    <h3 class="post__title">Le délice des sens</h3>
+                    <p class="post__description">Folie-Méricourt</p>
+                </a>
 
-                        <h3 class="post__title">A la française</h3>
-                        <p class="post__description">Cité Rouge</p>
-                    </a>
-
-                    <label class="btn-like">
-                        <span class="visually-hidden">j'aime</span>
-                        <input class="like-check" type="checkbox" aria-label="J'aime" />
-                        <span class="heart-shape heart-stroke"></span>
-                        <span class="heart-shape heart-bg"></span>
-                        <span class="heart-shape heart-fill"></span>
-                    </label>
-                </article>
-
-                <article class="post">
-                    <a href="#" class="post__link">
-                        <picture class="post__picture">
-                            <source srcset="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" />
-                            <img class="post__img" src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="restaurant" />
-                        </picture>
-
-                        <h3 class="post__title">Le délice des sens</h3>
-                        <p class="post__description">Folie-Méricourt</p>
-                    </a>
-
-                    <label class="btn-like">
-                        <span class="visually-hidden">j'aime</span>
-                        <input class="like-check" type="checkbox" aria-label="J'aime" />
-                        <span class="heart-shape heart-stroke"></span>
-                        <span class="heart-shape heart-bg"></span>
-                        <span class="heart-shape heart-fill"></span>
-                    </label>
-                </article>
-            </div>
-        </section>
+                <label class="btn-like">
+                    <span class="visually-hidden">j'aime</span>
+                    <input class="like-check" type="checkbox" aria-label="J'aime" />
+                    <span class="heart-shape heart-stroke"></span>
+                    <span class="heart-shape heart-bg"></span>
+                    <span class="heart-shape heart-fill"></span>
+                </label>
+            </article>
+        </div>
     </main>
 
     <footer class="site-footer">

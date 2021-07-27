@@ -1,3 +1,41 @@
+@media (min-width: 1440px) {
+    .page-home {
+        display: grid;
+        grid-template-areas: "site-header restaurants"
+                            "search-nav restaurants"
+                            "operations restaurants"
+                            "site-footer site-footer";
+        grid-template-columns: 1fr 3fr;
+
+        .site-header {
+            grid-area: site-header;
+        }
+
+        .search-nav {
+            grid-area: search-nav;
+        }
+
+        .section-operations {
+            grid-area: operations;
+
+            .operations__list {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .section-posts {
+            grid-area: restaurants;
+        }
+
+        .site-footer {
+            grid-area: site-footer;
+        }
+    }
+}
+
+
+
 .posts {
     display: grid;
     grid-template-columns: minmax(0, $image-width__max);
