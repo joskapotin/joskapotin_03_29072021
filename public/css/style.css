@@ -260,7 +260,7 @@ button {
 .btn {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   background: #9356DC;
-  background: linear-gradient(355deg, #9356DC 0%, #FF79DA 100%);
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
   border-radius: 50vh;
   border: 0;
   color: #fff;
@@ -271,12 +271,12 @@ button {
   min-width: 186px;
   padding: 1.6rem 2.2rem;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 .btn::before {
   box-shadow: 0px 2px 5px rgba(121, 72, 182, 0.5);
   background: #a16be0;
-  background: linear-gradient(355deg, #782cd3 0%, #ff46cc 100%);
+  background: linear-gradient(to top, #782cd3, #ff46cc);
   border-radius: 50vh;
   bottom: 0;
   content: "";
@@ -301,31 +301,33 @@ button {
   grid-template-areas: "btn-like";
   height: 28px;
   place-content: center;
-  position: relative;
-  right: 8px;
-  transform-origin: center;
-  transform: rotate(-45deg);
   width: 28px;
 }
-.btn-like .like-check {
+
+.btn-like-css {
+  position: relative;
+  transform-origin: center;
+  transform: rotate(-45deg);
+}
+.btn-like-css .like-check {
   grid-area: btn-like;
   opacity: 0;
   width: 1em;
   height: 1em;
 }
-.btn-like .like-check:checked ~ .heart-fill {
+.btn-like-css .like-check:checked ~ .heart-fill {
   transform: scale(1);
 }
-.btn-like .like-check:focus-visible + .heart-stroke {
+.btn-like-css .like-check:focus-visible + .heart-stroke {
   box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
 }
-.btn-like .heart-shape {
+.btn-like-css .heart-shape {
   grid-area: btn-like;
   position: relative;
   height: 28px;
   width: 28px;
 }
-.btn-like .heart-shape::before, .btn-like .heart-shape::after {
+.btn-like-css .heart-shape::before, .btn-like-css .heart-shape::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -333,65 +335,57 @@ button {
   height: 28px;
   border-radius: 18px 18px 0 0;
 }
-.btn-like .heart-shape::after {
+.btn-like-css .heart-shape::after {
   width: 28px;
   height: 18px;
   border-radius: 0 18px 18px 0;
 }
-.btn-like .heart-bg {
+.btn-like-css .heart-bg {
   top: 1px;
   left: 1px;
   height: 26px;
   width: 26px;
 }
-.btn-like .heart-bg::before, .btn-like .heart-bg::after {
+.btn-like-css .heart-bg::before, .btn-like-css .heart-bg::after {
   width: 16px;
   height: 26px;
   border-radius: 16px 16px 0 0;
 }
-.btn-like .heart-bg::after {
+.btn-like-css .heart-bg::after {
   width: 26px;
   height: 16px;
   border-radius: 0 16px 16px 0;
 }
-.btn-like .heart-stroke::before, .btn-like .heart-stroke::after {
+.btn-like-css .heart-stroke::before, .btn-like-css .heart-stroke::after {
   background-color: #101010;
 }
-.btn-like .heart-bg::before, .btn-like .heart-bg::after {
+.btn-like-css .heart-bg::before, .btn-like-css .heart-bg::after {
   background-color: #fff;
 }
-.btn-like .heart-fill::before, .btn-like .heart-fill::after {
+.btn-like-css .heart-fill::before, .btn-like-css .heart-fill::after {
   background: #9356DC;
   background: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
 }
-.btn-like .heart-fill {
+.btn-like-css .heart-fill {
   transform-origin: bottom left;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
 
-.like-button {
+.btn-like-icon {
   padding: 0;
   background: 0;
   border: 0;
   color: #000;
-  cursor: pointer;
-  display: grid;
   font-size: 4rem;
-  grid-area: restaurant;
-  grid-template-areas: "like-button";
-  height: 28px;
-  margin: auto 24px 33px auto;
-  place-content: center;
   position: relative;
-  width: 28px;
   z-index: 10;
 }
-.like-button .liked, .like-button::before {
-  grid-area: like-button;
+.btn-like-icon .liked, .btn-like-icon::before {
+  grid-area: btn-like;
   font-size: 3rem;
 }
-.like-button::before {
+.btn-like-icon::before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-family: "Font Awesome 5 Free";
@@ -405,7 +399,7 @@ button {
   opacity: 1;
   transition: all 300ms ease-in-out;
 }
-.like-button .liked {
+.btn-like-icon .liked {
   background-image: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
   background-size: 100%;
   -webkit-background-clip: text;
@@ -413,7 +407,7 @@ button {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-.like-button .liked::before {
+.btn-like-icon .liked::before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-family: "Font Awesome 5 Free";
@@ -428,10 +422,10 @@ button {
   opacity: 0;
   transition: all 300ms ease-in-out;
 }
-.like-button:hover::before {
+.btn-like-icon:hover::before {
   opacity: 0;
 }
-.like-button:hover .liked::before {
+.btn-like-icon:hover .liked::before {
   transform: scale(1);
   opacity: 1;
 }
@@ -441,14 +435,8 @@ button {
   background: 0;
   border: 0;
   color: #000;
-  cursor: pointer;
-  display: grid;
   font-size: 4rem;
-  grid-area: restaurant;
-  grid-template-areas: "like-button";
   height: 30px;
-  margin: auto 24px 33px auto;
-  place-content: center;
   position: relative;
   width: 30px;
   z-index: 10;
@@ -459,6 +447,32 @@ button {
 }
 .btn-like-svg .heart-fill {
   stroke: transparent;
+}
+
+.btn-like-clip {
+  padding: 0;
+  background: 0;
+  border: 0;
+}
+.btn-like-clip:hover::after {
+  background-position: bottom;
+}
+.btn-like-clip::before, .btn-like-clip::after {
+  content: "";
+  grid-area: btn-like;
+  height: 35px;
+  width: 30px;
+}
+.btn-like-clip::before {
+  background-color: #000;
+  clip-path: url(../images/clip-path.svg#clipping-stroke);
+}
+.btn-like-clip::after {
+  background-image: linear-gradient(to top, #ff79da 0%, #9356dc 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 100% 200%;
+  background-position: top;
+  clip-path: url(../images/clip-path.svg#clipping-bg);
+  transition: background-position 300ms ease-in-out;
 }
 
 .checkbox {
@@ -886,7 +900,7 @@ button {
   padding: 5px 13px;
   background-color: #99E2D0;
   border-radius: 3px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .post__title,

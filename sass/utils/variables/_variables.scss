@@ -21,8 +21,8 @@ $color__link--hover: lightness-shift($color__link);
 $color-btn: $color-primary;
 $color-btn--hover: lighten($color-primary, 5);
 
-$gradient-btn: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
-$gradient-btn--hover: linear-gradient(355deg, lightness-shift( $color-primary ) 0%, lightness-shift( $color-secondary ) 100%);
+$gradient-btn: linear-gradient(to top, $color-primary, $color-secondary);
+$gradient-btn--hover: linear-gradient(to top, lightness-shift( $color-primary ), lightness-shift( $color-secondary ));
 
 $gradient-heart: linear-gradient(45deg, rgba(255,121,218,1) 0%, rgba(182,97,219,1) 100%);
 
