@@ -352,6 +352,7 @@ button {
   transform-origin: center;
   transform: scale(0);
   z-index: 1000;
+  animation: modal-init 5s linear forwards;
 }
 .modal-box .heading {
   display: block;
