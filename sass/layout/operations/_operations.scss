@@ -1,6 +1,13 @@
-.section-operations {
-    padding-top: 50px;
-    padding-bottom: 70px;
+.operations {
+    padding: 50px $site-gap 70px;
+    display: grid;
+    grid-template-columns: minmax(0, $image-width__max);
+    justify-content: center;
+    gap: $site-gap;
+
+    @media (min-width: $medium){
+        grid-template-columns: minmax(0, $image-width__max*2 + $site-gap*2);
+    }
 
     .section-title {
         @media (min-width: $small) {
@@ -16,13 +23,13 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: $site-gap;
-    margin-top: 30px;
     list-style: none;
     padding: 0;
+    margin: 0;
     counter-reset: operations-counter;
 
     @media (min-width: $medium) {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax( 0, 1fr ));
         gap: $site-gap*2;
     }
 
@@ -81,6 +88,9 @@
 
         .operation__text {
             font-weight: bolder;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
 
             &::before {
                 @include icon;

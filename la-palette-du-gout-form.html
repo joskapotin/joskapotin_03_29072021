@@ -19,7 +19,7 @@
 </head>
 
 <body class="page-post">
-    <header class="site-header container-small">
+    <header class="site-header">
         <nav>
             <a href="index.html" title="retour à la page d'accueil" aria-label="retour à la page d'accueil"></a>
         </nav>
@@ -27,20 +27,22 @@
     </header>
 
     <main class="main-content">
-        <section class="section-post container-small">
-            <picture class="post__picture">
-                <source srcset="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
-                <img class="post__img" src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant" />
-            </picture>
+
+        <picture class="post__picture">
+            <source srcset="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
+            <img class="post__img" src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant" />
+        </picture>
+    
+        <section class="section-post">
 
             <header class="post__header">
                 <h1 class="post__title heading">La palette du goût</h1>
-                <label class="btn-like">
+                <label class="btn-like btn-like-css">
                     <span class="visually-hidden">j'aime</span>
-                    <input class="like-check" type="checkbox" aria-label="J'aime" />
-                    <span class="heart-shape heart-stroke"></span>
-                    <span class="heart-shape heart-bg"></span>
-                    <span class="heart-shape heart-fill"></span>
+                    <input class="like-check visually-hidden" type="checkbox" aria-label="J'aime" aria-label="J'aime" />
+                    <span class="heart"></span>
+                    <span class="heart heart-clip"></span>
+                    <span class="heart heart-fill"></span>
                 </label>
             </header>
 
@@ -264,15 +266,13 @@
     </main>
 
     <footer class="site-footer">
-        <section class="footer-content container-large">
-            <h2 class="heading h2">ohmyfood</h2>
-            <ul class="flex-medium">
-                <li><a href="loader.html">Proposer un restaurant</a></li>
-                <li><a href="loader.html">Devenir partenaire</a></li>
-                <li><a href="loader.html">Mentions légales</a></li>
-                <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
-            </ul>
-        </section>
+        <h2 class="heading h2">ohmyfood</h2>
+        <ul class="flex-medium">
+            <li><a href="loader.html">Proposer un restaurant</a></li>
+            <li><a href="loader.html">Devenir partenaire</a></li>
+            <li><a href="loader.html">Mentions légales</a></li>
+            <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
+        </ul>
     </footer>
 </body>
 

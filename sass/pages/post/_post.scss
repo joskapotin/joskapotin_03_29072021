@@ -3,7 +3,7 @@
         position: relative;
         padding-top: 210px;
 
-        @media (min-width: $container-size) and (max-width: $large) {
+        @media (min-width: $image-width__max) and (max-width: $large) {
             &::after {
                 background: $grey-dark;
                 bottom: 0;
@@ -12,11 +12,10 @@
                 left: 0;
                 position: absolute;
                 right: 0;
-                z-index: -1;
             }
         }
 
-        @media (min-width: $container-size__max) {
+        @media (min-width: $xlarge) {
             &::after {
                 background: $grey-dark;
                 bottom: 0;
@@ -25,7 +24,6 @@
                 left: 0;
                 position: absolute;
                 right: 0;
-                z-index: -1;
             }
         }
     }
@@ -36,13 +34,23 @@
         border-top-left-radius: 37px;
         border-top-right-radius: 37px;
         overflow: hidden;
+        position: relative;
+        z-index: 10;
+        padding: 0 $site-gap 0;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: $image-width__max;
 
-        @media (min-width: $container-size) and (max-width: $large) {
+        @media (min-width: $image-width__max) and (max-width: $large) {
             border-bottom-left-radius: 37px;
             border-bottom-right-radius: 37px;
         }
 
-        @media (min-width: $container-size__max) {
+        @media (min-width: $large) {
+            max-width: $xlarge;
+        }
+
+        @media (min-width: $xlarge) {
             border-bottom-left-radius: 37px;
             border-bottom-right-radius: 37px;
         }
@@ -53,7 +61,6 @@
         width: 100%;
         top: 0;
         left: 0;
-        z-index: -1;
     }
 
     .post__img {
@@ -68,6 +75,8 @@
         flex-direction: row;
         justify-content: space-between;
         padding-top: 30px;
+        position: relative;
+        z-index: 10;
 
         @media (min-width: $large) {
             justify-content: center;

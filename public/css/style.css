@@ -228,31 +228,6 @@ img {
   object-fit: cover;
 }
 
-.container-small,
-.container-medium,
-.container-large {
-  margin: 0 auto;
-  max-width: 600px;
-  min-width: 340px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-@media (min-width: 768px) {
-  .container-large {
-    max-width: 1440px;
-  }
-}
-@media (min-width: 992px) {
-  .container-medium {
-    max-width: 1200px;
-  }
-}
-@media (min-width: 1200px) {
-  .container-small {
-    max-width: 1440px;
-  }
-}
 button {
   cursor: pointer;
 }
@@ -295,6 +270,9 @@ button {
   top: 1px;
 }
 
+/*============================
+    like button general layout
+    ============================*/
 .btn-like {
   cursor: pointer;
   display: grid;
@@ -303,14 +281,16 @@ button {
   place-content: center;
   width: 28px;
 }
+.btn-like > * {
+  grid-area: btn-like;
+}
 
+/* pure css button */
 .btn-like-css {
-  position: relative;
   transform-origin: center;
   transform: rotate(-45deg);
 }
 .btn-like-css .like-check {
-  grid-area: btn-like;
   opacity: 0;
   width: 1em;
   height: 1em;
@@ -321,57 +301,52 @@ button {
 .btn-like-css .like-check:focus-visible + .heart-stroke {
   box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
 }
-.btn-like-css .heart-shape {
-  grid-area: btn-like;
+.btn-like-css .heart {
   position: relative;
   height: 28px;
   width: 28px;
 }
-.btn-like-css .heart-shape::before, .btn-like-css .heart-shape::after {
+.btn-like-css .heart::before, .btn-like-css .heart::after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 18px;
   height: 28px;
   border-radius: 18px 18px 0 0;
+  background-color: #101010;
 }
-.btn-like-css .heart-shape::after {
+.btn-like-css .heart::after {
   width: 28px;
   height: 18px;
   border-radius: 0 18px 18px 0;
 }
-.btn-like-css .heart-bg {
-  top: 1px;
-  left: 1px;
+.btn-like-css .heart-clip {
   height: 26px;
   width: 26px;
+  margin: auto;
 }
-.btn-like-css .heart-bg::before, .btn-like-css .heart-bg::after {
+.btn-like-css .heart-clip::before, .btn-like-css .heart-clip::after {
   width: 16px;
   height: 26px;
   border-radius: 16px 16px 0 0;
+  background-color: #fff;
 }
-.btn-like-css .heart-bg::after {
+.btn-like-css .heart-clip::after {
   width: 26px;
   height: 16px;
   border-radius: 0 16px 16px 0;
-}
-.btn-like-css .heart-stroke::before, .btn-like-css .heart-stroke::after {
-  background-color: #101010;
-}
-.btn-like-css .heart-bg::before, .btn-like-css .heart-bg::after {
-  background-color: #fff;
-}
-.btn-like-css .heart-fill::before, .btn-like-css .heart-fill::after {
-  background: #9356DC;
-  background: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
 }
 .btn-like-css .heart-fill {
   transform-origin: bottom left;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
+.btn-like-css .heart-fill::before, .btn-like-css .heart-fill::after {
+  background: #9356DC;
+  background: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
+}
 
+/* like button using glyphes, background-clip, text-fill-color */
 .btn-like-icon {
   padding: 0;
   background: 0;
@@ -417,7 +392,7 @@ button {
   text-rendering: auto;
   content: "";
   font-weight: bold;
-  transform-origin: bottom;
+  transform-origin: center;
   transform: scale(0);
   opacity: 0;
   transition: all 300ms ease-in-out;
@@ -430,15 +405,13 @@ button {
   opacity: 1;
 }
 
+/* like button using svg smil animation */
 .btn-like-svg {
+  display: block;
   padding: 0;
   background: 0;
   border: 0;
-  color: #000;
-  font-size: 4rem;
-  height: 30px;
   position: relative;
-  width: 30px;
   z-index: 10;
 }
 .btn-like-svg .heart-stroke {
@@ -449,6 +422,7 @@ button {
   stroke: transparent;
 }
 
+/* like button using clip-path and external svg. path not supported on chrome*/
 .btn-like-clip {
   padding: 0;
   background: 0;
@@ -460,8 +434,8 @@ button {
 .btn-like-clip::before, .btn-like-clip::after {
   content: "";
   grid-area: btn-like;
-  height: 35px;
-  width: 30px;
+  height: 28px;
+  width: 28px;
 }
 .btn-like-clip::before {
   background-color: #000;
@@ -680,26 +654,14 @@ button {
   }
 }
 
-.section-posts {
-  background: #f6f6f6;
-  padding-top: 58px;
-  padding-bottom: 64px;
-}
-.section-posts .section-title {
-  margin-bottom: 40px;
-}
-@media (min-width: 768px) {
-  .section-posts .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-}
-
 .site-header {
   display: grid;
   min-height: 63px;
   grid-template-areas: "site-header";
   align-items: center;
+  grid-template-columns: minmax(0, 600px);
+  justify-content: center;
+  padding: 0 20px;
 }
 .site-header .logo {
   color: #101010;
@@ -772,17 +734,25 @@ button {
   padding: 0 30px;
 }
 
-.section-operations {
-  padding-top: 50px;
-  padding-bottom: 70px;
+.operations {
+  padding: 50px 20px 70px;
+  display: grid;
+  grid-template-columns: minmax(0, 600px);
+  justify-content: center;
+  gap: 20px;
+}
+@media (min-width: 992px) {
+  .operations {
+    grid-template-columns: minmax(0, 1240px);
+  }
 }
 @media (min-width: 768px) {
-  .section-operations .section-title {
+  .operations .section-title {
     text-align: center;
   }
 }
 @media (min-width: 992px) {
-  .section-operations .section-title {
+  .operations .section-title {
     margin-bottom: 40px;
   }
 }
@@ -791,9 +761,9 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 20px;
-  margin-top: 30px;
   list-style: none;
   padding: 0;
+  margin: 0;
   counter-reset: operations-counter;
 }
 @media (min-width: 992px) {
@@ -851,6 +821,9 @@ button {
 }
 .operations__list .operation .operation__text {
   font-weight: bolder;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .operations__list .operation .operation__text::before {
   -webkit-font-smoothing: antialiased;
@@ -873,50 +846,8 @@ button {
   content: "";
 }
 
-.post__link {
-  grid-area: restaurant;
-  color: #000;
-  border: 0;
-  display: grid;
-  grid-template-areas: "image" "text";
-}
-
-.post__picture {
-  grid-area: image;
-}
-
-.post__img {
-  height: 174px;
-}
-@media (min-width: 992px) {
-  .post__img {
-    height: 250px;
-  }
-}
-
-.meta-info {
-  grid-area: image;
-  margin: 13px 11px auto auto;
-  padding: 5px 13px;
-  background-color: #99E2D0;
-  border-radius: 3px;
-  color: rgba(0, 0, 0, 0.9);
-}
-
-.post__title,
-.post__description {
-  margin: 0;
-  padding: 10px 90px 0 14px;
-}
-
-.post__description {
-  padding-top: 0;
-  padding-bottom: 18px;
-}
-
-.btn-like {
-  grid-area: restaurant;
-  margin: auto 24px 33px auto;
+.main-content {
+  background-color: #f6f6f6;
 }
 
 .menu__field {
@@ -1029,52 +960,55 @@ button {
 }
 .site-footer {
   background: #353535;
-}
-
-.footer-content {
-  padding-top: 25px;
-  padding-bottom: 35px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1200px);
+  justify-content: center;
+  padding: 25px 20px 35px;
   color: #fff;
 }
+.site-footer .heading {
+  margin: 0;
+}
 @media (min-width: 768px) {
-  .footer-content .heading {
+  .site-footer .heading {
     text-align: center;
   }
 }
-.footer-content ul {
+.site-footer ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 @media (min-width: 768px) {
-  .footer-content ul {
+  .site-footer ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     gap: 30px;
   }
 }
-.footer-content li {
+.site-footer li {
   margin-top: 2px;
 }
-.footer-content li a {
+.site-footer li a {
   color: #fff;
   border-color: transparent;
 }
-.footer-content li a:focus {
+.site-footer li a:focus {
   color: #782cd3;
 }
-.footer-content li a:hover {
+.site-footer li a:hover {
   color: currentColor;
   border-color: currentColor;
 }
-.footer-content li a:active {
+.site-footer li a:active {
   color: #782cd3;
 }
-.footer-content li::before {
+.site-footer li::before {
   margin-right: 15px;
 }
-.footer-content li:nth-of-type(1)::before {
+.site-footer li:nth-of-type(1)::before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-family: "Font Awesome 5 Free";
@@ -1084,7 +1018,7 @@ button {
   text-rendering: auto;
   content: "";
 }
-.footer-content li:nth-of-type(2)::before {
+.site-footer li:nth-of-type(2)::before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-family: "Font Awesome 5 Free";
@@ -1095,50 +1029,35 @@ button {
   content: "";
 }
 
-@media (min-width: 1440px) {
-  .page-home {
-    display: grid;
-    grid-template-areas: "site-header restaurants" "search-nav restaurants" "operations restaurants" "site-footer site-footer";
-    grid-template-columns: 1fr 3fr;
-  }
-  .page-home .site-header {
-    grid-area: site-header;
-  }
-  .page-home .search-nav {
-    grid-area: search-nav;
-  }
-  .page-home .section-operations {
-    grid-area: operations;
-  }
-  .page-home .section-operations .operations__list {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-  .page-home .section-posts {
-    grid-area: restaurants;
-  }
-  .page-home .site-footer {
-    grid-area: site-footer;
-  }
-}
-.posts {
+.page-home .main-content {
   display: grid;
   grid-template-columns: minmax(0, 600px);
   justify-content: center;
   gap: 20px;
+  padding: 58px 20px 64px;
 }
 @media (min-width: 768px) {
-  .posts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .page-home .main-content {
+    grid-template-columns: repeat(2, minmax(0, 600px));
     gap: 40px;
   }
 }
 @media (min-width: 992px) {
-  .posts {
+  .page-home .main-content {
     gap: 60px;
   }
 }
-.posts .post {
+.page-home .main-content .section-title {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .page-home .main-content .section-title {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.page-home .main-content .post {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   background: #fff;
   border-radius: 15px;
@@ -1146,6 +1065,45 @@ button {
   grid-template-areas: "restaurant";
   overflow: hidden;
   position: relative;
+}
+.page-home .main-content .post__link {
+  grid-area: restaurant;
+  color: #000;
+  border: 0;
+  display: grid;
+  grid-template-areas: "image" "text";
+}
+.page-home .main-content .post__picture {
+  grid-area: image;
+}
+.page-home .main-content .post__img {
+  height: 174px;
+}
+@media (min-width: 992px) {
+  .page-home .main-content .post__img {
+    height: 250px;
+  }
+}
+.page-home .main-content .meta-info {
+  grid-area: image;
+  margin: 13px 11px auto auto;
+  padding: 5px 13px;
+  background-color: #99E2D0;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.page-home .main-content .post__title,
+.page-home .main-content .post__description {
+  margin: 0;
+  padding: 10px 90px 0 14px;
+}
+.page-home .main-content .post__description {
+  padding-top: 0;
+  padding-bottom: 18px;
+}
+.page-home .main-content .btn-like {
+  grid-area: restaurant;
+  margin: auto 24px 33px auto;
 }
 
 .page-post .main-content {
@@ -1161,7 +1119,6 @@ button {
     left: 0;
     position: absolute;
     right: 0;
-    z-index: -1;
   }
 }
 @media (min-width: 1440px) {
@@ -1173,7 +1130,6 @@ button {
     left: 0;
     position: absolute;
     right: 0;
-    z-index: -1;
   }
 }
 .page-post .section-post {
@@ -1182,11 +1138,22 @@ button {
   border-top-left-radius: 37px;
   border-top-right-radius: 37px;
   overflow: hidden;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px 0;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 600px;
 }
 @media (min-width: 600px) and (max-width: 1200px) {
   .page-post .section-post {
     border-bottom-left-radius: 37px;
     border-bottom-right-radius: 37px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-post .section-post {
+    max-width: 1440px;
   }
 }
 @media (min-width: 1440px) {
@@ -1200,7 +1167,6 @@ button {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 .page-post .post__img {
   height: 257px;
@@ -1213,6 +1179,8 @@ button {
   flex-direction: row;
   justify-content: space-between;
   padding-top: 30px;
+  position: relative;
+  z-index: 10;
 }
 @media (min-width: 1200px) {
   .page-post .post__header {

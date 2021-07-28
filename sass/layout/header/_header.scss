@@ -3,6 +3,9 @@
     min-height: 63px;
     grid-template-areas: "site-header";
     align-items: center;
+    grid-template-columns: minmax(0, $image-width__max);
+    justify-content: center;
+    padding: 0 $site-gap;
 
     .logo {
         color: $color__logo;
