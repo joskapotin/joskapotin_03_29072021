@@ -40,11 +40,6 @@ body {
   line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
 /* Make images easier to work with */
 img,
 picture {
@@ -82,7 +77,7 @@ input:focus-visible {
 }
 
 .visually-hidden:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
