@@ -739,7 +739,6 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 600px);
   justify-content: center;
-  gap: 20px;
 }
 @media (min-width: 992px) {
   .operations {
@@ -856,12 +855,23 @@ button {
   padding: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 18px;
+  row-gap: 18px;
 }
 .menu__field .h2 {
   font-size: 1.6rem;
   font-weight: normal;
   text-transform: uppercase;
+  padding: 0;
+  /* hack to reset legend */
+  display: table;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* end of hack */
+}
+.menu__field .h2 + * {
+  clear: both;
 }
 .menu__field .h2::after {
   background: #99E2D0;
@@ -961,14 +971,10 @@ button {
 .site-footer {
   background: #353535;
   display: grid;
-  gap: 20px;
   grid-template-columns: minmax(0, 1200px);
   justify-content: center;
   padding: 25px 20px 35px;
   color: #fff;
-}
-.site-footer .heading {
-  margin: 0;
 }
 @media (min-width: 768px) {
   .site-footer .heading {
@@ -985,7 +991,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 30px;
+    column-gap: 30px;
   }
 }
 .site-footer li {
@@ -1197,17 +1203,22 @@ button {
   margin: 0 0 0 20px;
 }
 .page-post .post__form {
-  margin-top: 50px;
+  margin-top: 30px;
   padding-bottom: 55px;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 20px;
+  gap: 60px;
 }
 @media (min-width: 1200px) {
   .page-post .post__form {
     grid-template-columns: repeat(3, minmax(0, 400px));
     justify-content: space-between;
   }
+}
+.page-post .post__form .btn {
+  margin: auto;
+}
+@media (min-width: 1200px) {
   .page-post .post__form .btn {
     grid-column: 2/3;
   }

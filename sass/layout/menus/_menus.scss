@@ -4,12 +4,25 @@
     padding: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    row-gap: 18px;
 
     .h2 {
         font-size: 1.6rem;
         font-weight: normal;
         text-transform: uppercase;
+        padding: 0;
+
+        /* hack to reset legend */
+        display: table;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        + * {
+            clear: both;
+        }
+        /* end of hack */
 
         &::after {
             background: $color-tertiary;

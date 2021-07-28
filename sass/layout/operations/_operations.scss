@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: minmax(0, $image-width__max);
     justify-content: center;
-    gap: $site-gap;
 
     @media (min-width: $medium){
         grid-template-columns: minmax(0, $image-width__max*2 + $site-gap*2);
