@@ -44,10 +44,6 @@ button {
     }
 }
 
-/*============================
-    like button general layout
-    ============================*/
-
 .btn-like {
     cursor: pointer;
     display: grid;
@@ -55,17 +51,12 @@ button {
     height: 28px;
     place-content: center;
     width: 28px;
+    transform-origin: center;
+    transform: rotate(-45deg);
 
     > * {
         grid-area: btn-like;
     }
-}
-
-/* pure css button */
-
-.btn-like-css {
-    transform-origin: center;
-    transform: rotate(-45deg);
 
     .like-check {
         opacity: 0;
@@ -76,8 +67,9 @@ button {
             transform: scale(1);
         }
 
-        &:focus-visible + .heart-stroke {
-            box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
+        &:focus-visible + .heart {
+            outline: 2px solid $color-primary;
+            outline-offset: 0.25em;
         }
 
     }
@@ -135,115 +127,5 @@ button {
             background: $color-primary;
             background: $gradient-heart;
         }
-    }
-}
-
-/* like button using glyphes, background-clip, text-fill-color */
-
-.btn-like-icon {
-    padding: 0;
-    background: 0;
-    border: 0;
-    color: #000;
-    font-size: 4rem;
-    position: relative;
-    z-index: 10;
-
-    .liked,
-    &::before {
-        grid-area: btn-like;
-        font-size: 3rem;
-    }
-
-    &::before {
-        @include icon;
-        content: "\f004";
-        color: $black;
-        font-weight: normal;
-        opacity: 1;
-        transition: all 300ms ease-in-out;
-    }
-
-    .liked {
-        background-image: $gradient-heart;
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -moz-text-fill-color: transparent;
-    }
-
-    .liked::before {
-        @include icon;
-        content: "\f004";
-        font-weight: bold;
-        transform-origin: center;
-        transform: scale(0);
-        opacity: 0;
-        transition: all 300ms ease-in-out;
-    }
-
-    &:hover {
-        &::before {
-            opacity: 0;
-        }
-
-        .liked::before {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
-}
-
-/* like button using svg smil animation */
-
-.btn-like-svg {
-    display: block;
-    padding: 0;
-    background: 0;
-    border: 0;
-    position: relative;
-    z-index: 10;
-      
-    .heart-stroke {
-    stroke: black;
-    fill: transparent;
-    }
-    
-    .heart-fill {
-    stroke: transparent;
-    }
-}
-
-/* like button using clip-path and external svg. path not supported on chrome*/
-
-.btn-like-clip {
-    padding: 0;
-    background: 0;
-    border: 0;
-
-    &:hover::after {
-        background-position: bottom;
-    }
-
-    &::before,
-    &::after {
-        content: "";
-        grid-area: btn-like;
-        height: 28px;
-        width: 28px;
-    }
-
-    &::before {
-        background-color: $black;
-        clip-path: url(../images/clip-path.svg#clipping-stroke);
-    }
-
-    &::after {
-        background-image: linear-gradient(to top, #ff79da 0%, #9356dc 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
-        background-size: 100% 200%;
-        background-position: top;
-        clip-path: url(../images/clip-path.svg#clipping-bg);
-        transition: background-position 300ms ease-in-out;
     }
 }

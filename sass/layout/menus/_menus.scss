@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     row-gap: 18px;
+    align-content: start;
 
     .h2 {
         font-size: 1.6rem;
@@ -13,7 +14,6 @@
         padding: 0;
 
         /* hack to reset legend */
-        display: table;
         float: left;
         margin: 0;
         padding: 0;
@@ -42,6 +42,7 @@
         display: flex;
         overflow: hidden;
         cursor: pointer;
+        height: 68px;
 
         &:nth-of-type(2) {
             animation-delay: 200ms;
@@ -98,32 +99,59 @@
 
         .menu-item__input {
             background: $color-tertiary;
-            place-content: center;
-            width: 60px;
+            display: grid;
+            grid-template-areas: "checkbox";
             margin-right: -60px;
+            place-content: center;
             transition: margin linear 400ms;
-        }
-
-        .menu-item__control {
-            height: 2rem;
-            width: 2rem;
-            border-radius: 2rem;
-            color: $color-tertiary;
-            background: $white;
-            transform: rotate(0);
-            opacity: 0;
-            transition: transform linear 400ms,
-                opacity linear 400ms;
-        }
-
-        .menu-item__input:focus-within {
-            transition: none !important;
-            margin-right: 0;
+            width: 60px;
 
             .menu-item__control {
+                grid-area: checkbox;
+                display: inline-grid;
+                height: 2rem;
+                width: 2rem;
+                border-radius: 2rem;
+                background: $white;
+                color: $color-tertiary;
+                opacity: 0;
+                transform: rotate(0);
+                transition: transform linear 400ms, opacity linear 400ms;
+                
+                svg {
+                    transition: transform 0.1s ease-in 25ms;
+                    transform: scale(0);
+                    transform-origin: bottom left;
+                }
+            }
+
+            input {
+                grid-area: checkbox;
+                opacity: 0;
+                width: 1em;
+                height: 1em;
+        
+                &:focus-visible + .checkbox__control {
+                    box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px $color-primary;
+                }
+        
+                &:checked + .checkbox__control svg {
+                    transform: scale(1);
+                }
+        
+                &:disabled + .checkbox__control {
+                    color: var(--disabled);
+                }
+            }        
+
+            &:focus-within {
                 transition: none !important;
-                opacity: 1;
-                transform: rotate(360deg);
+                margin-right: 0;
+    
+                .menu-item__control {
+                    transition: none !important;
+                    opacity: 1;
+                }
             }
         }
     }

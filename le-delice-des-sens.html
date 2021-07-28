@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le délice des sens - Oh my food</title>
+
+    <script src="https://kit.fontawesome.com/ada96ab6b4.js" crossorigin="anonymous" defer></script>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shrikhand&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shrikhand&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shrikhand&display=swap" />
+    </noscript>
+
+    <link rel="stylesheet" href="public/css/style.css" />
+</head>
+
+<body class="page-post">
+    <header class="site-header">
+        <nav>
+            <a href="index.html" title="retour à la page d'accueil" aria-label="retour à la page d'accueil"></a>
+        </nav>
+        <span class="logo">ohmyfood</span>
+    </header>
+
+    <main class="main-content">
+
+        <picture class="post__picture">
+            <source srcset="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" />
+            <img class="post__img" src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant" />
+        </picture>
+    
+        <section class="section-post">
+
+            <header class="post__header">
+                <h1 class="post__title heading">Le délice des sens</h1>
+                <label class="btn-like btn-like-css">
+                    <span class="visually-hidden">j'aime</span>
+                    <input class="like-check visually-hidden" type="checkbox" aria-label="J'aime" />
+                    <span class="heart"></span>
+                    <span class="heart heart-clip"></span>
+                    <span class="heart heart-fill"></span>
+                </label>
+            </header>
+
+            <form class="post__form">
+
+                <fieldset class="menu__field">
+                    <legend class="h2">Entrées</legend>
+
+                    <label for="starter-01" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Tartare de thon</span>
+                                <span class="menu-item__description p">Assaisonné au yuzu</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">25€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="starter-01" id="starter-01" value="starter-01" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label for="starter-02" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Bouchée de homard croustillant</span>
+                                <span class="menu-item__description p">Et sa farandole de petits légumes</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">35€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="starter-02" id="starter-02" value="starter-02" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label for="starter-03" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Velouté de cèpes</span>
+                                <span class="menu-item__description p">Aux truffes</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">20€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="starter-03" id="starter-03" value="starter-03" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <fieldset class="menu__field">
+                    <legend class="h2">Plats</legend>
+                    <label for="main-course-01" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Poulet rôti aux herbes de Provence </span>
+                                <span class="menu-item__description p">Et sa crème de truffe</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">40€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="main-course-01" id="main-course-01" value="main-course-01" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label for="main-course-02" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Langouste rôtie</span>
+                                <span class="menu-item__description p">Et ses légumes de saison</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">35€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="main-course-02" id="main-course-02" value="main-course-02" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label for="main-course-03" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Côte de boeuf Angus</span>
+                                <span class="menu-item__description p">Et sa purée de panais</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">44€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="main-course-03" id="main-course-03" value="main-course-03" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <fieldset class="menu__field">
+                    <legend class="h2">Desserts</legend>
+                    <label for="dessert-01" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Farandole de desserts</span>
+                                <span class="menu-item__description p">Du chef</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">18€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="dessert-01" id="dessert-01" value="dessert-01" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label for="dessert-02" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Crème brulée</span>
+                                <span class="menu-item__description p">Revisitée</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">22€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="dessert-02" id="dessert-02" value="dessert-02" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+
+                    <label for="dessert-03" class="menu-item checkbox">
+                        <span class="menu-item__label checkbox__label">
+                            <span class="menu-item__content">
+                                <span class="menu-item__name h3">Tiramisu </span>
+                                <span class="menu-item__description p">À la noisette</span>
+                            </span>
+                            <span class="menu-item__info">
+                                <span class="menu-item__price">23€</span>
+                            </span>
+                        </span>
+                        <span class="menu-item__input checkbox__input">
+                            <input type="checkbox" name="dessert-03" id="dessert-03" value="dessert-03" />
+                            <span class="menu-item__control checkbox__control">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill="none" stroke="currentColor" stroke-width="2.509" d="M4.367 9.548l3.874 3.704 7.372-7.372" />
+                                </svg>
+                            </span>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <button class="btn" type="submit">Commander</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <h2 class="heading h2">ohmyfood</h2>
+        <ul class="flex-medium">
+            <li><a href="loader.html">Proposer un restaurant</a></li>
+            <li><a href="loader.html">Devenir partenaire</a></li>
+            <li><a href="loader.html">Mentions légales</a></li>
+            <li><a href="mailto:contact@ohmyfood.fr">Contact</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

@@ -67,3 +67,7 @@ select {
         scroll-behavior: auto !important;
     }
 }
+
+legend + * {
+    -webkit-margin-top-collapse: separate;
+}

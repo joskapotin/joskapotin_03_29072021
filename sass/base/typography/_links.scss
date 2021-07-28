@@ -11,10 +11,12 @@ a:visited {
     color: currentColor;
 }
 
-a:focus {
+a:focus-visible {
     border-bottom-style: solid;
     background: $color-tertiary;
-    color: $color__link--hover;
+    color: darken($color__link--hover, 80);
+    outline: 2px solid $color-primary;
+    outline-offset: 0.25em;
 }
 
 a:hover {
@@ -24,6 +26,6 @@ a:hover {
 
 a:active {
     background: $color-secondary;
-    color: $color__link--hover;
+    color: darken($color__link--hover, 80);
     top: 1px;
 }

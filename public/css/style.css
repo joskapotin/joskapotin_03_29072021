@@ -70,6 +70,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+legend + * {
+  -webkit-margin-top-collapse: separate;
+}
+
 button:focus-visible,
 input:focus-visible {
   outline: 2px solid #9356DC;
@@ -77,7 +81,7 @@ input:focus-visible {
 }
 
 .visually-hidden:not(:focus):not(:active) {
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
@@ -193,10 +197,12 @@ a:visited {
   color: currentColor;
 }
 
-a:focus {
+a:focus-visible {
   border-bottom-style: solid;
   background: #99E2D0;
-  color: #782cd3;
+  color: black;
+  outline: 2px solid #9356DC;
+  outline-offset: 0.25em;
 }
 
 a:hover {
@@ -206,7 +212,7 @@ a:hover {
 
 a:active {
   background: #FF79DA;
-  color: #782cd3;
+  color: black;
   top: 1px;
 }
 
@@ -265,9 +271,6 @@ button {
   top: 1px;
 }
 
-/*============================
-    like button general layout
-    ============================*/
 .btn-like {
   cursor: pointer;
   display: grid;
@@ -275,33 +278,30 @@ button {
   height: 28px;
   place-content: center;
   width: 28px;
+  transform-origin: center;
+  transform: rotate(-45deg);
 }
 .btn-like > * {
   grid-area: btn-like;
 }
-
-/* pure css button */
-.btn-like-css {
-  transform-origin: center;
-  transform: rotate(-45deg);
-}
-.btn-like-css .like-check {
+.btn-like .like-check {
   opacity: 0;
   width: 1em;
   height: 1em;
 }
-.btn-like-css .like-check:checked ~ .heart-fill {
+.btn-like .like-check:checked ~ .heart-fill {
   transform: scale(1);
 }
-.btn-like-css .like-check:focus-visible + .heart-stroke {
-  box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
+.btn-like .like-check:focus-visible + .heart {
+  outline: 2px solid #9356DC;
+  outline-offset: 0.25em;
 }
-.btn-like-css .heart {
+.btn-like .heart {
   position: relative;
   height: 28px;
   width: 28px;
 }
-.btn-like-css .heart::before, .btn-like-css .heart::after {
+.btn-like .heart::before, .btn-like .heart::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -310,181 +310,35 @@ button {
   border-radius: 18px 18px 0 0;
   background-color: #101010;
 }
-.btn-like-css .heart::after {
+.btn-like .heart::after {
   width: 28px;
   height: 18px;
   border-radius: 0 18px 18px 0;
 }
-.btn-like-css .heart-clip {
+.btn-like .heart-clip {
   height: 26px;
   width: 26px;
   margin: auto;
 }
-.btn-like-css .heart-clip::before, .btn-like-css .heart-clip::after {
+.btn-like .heart-clip::before, .btn-like .heart-clip::after {
   width: 16px;
   height: 26px;
   border-radius: 16px 16px 0 0;
   background-color: #fff;
 }
-.btn-like-css .heart-clip::after {
+.btn-like .heart-clip::after {
   width: 26px;
   height: 16px;
   border-radius: 0 16px 16px 0;
 }
-.btn-like-css .heart-fill {
+.btn-like .heart-fill {
   transform-origin: bottom left;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
-.btn-like-css .heart-fill::before, .btn-like-css .heart-fill::after {
+.btn-like .heart-fill::before, .btn-like .heart-fill::after {
   background: #9356DC;
   background: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
-}
-
-/* like button using glyphes, background-clip, text-fill-color */
-.btn-like-icon {
-  padding: 0;
-  background: 0;
-  border: 0;
-  color: #000;
-  font-size: 4rem;
-  position: relative;
-  z-index: 10;
-}
-.btn-like-icon .liked, .btn-like-icon::before {
-  grid-area: btn-like;
-  font-size: 3rem;
-}
-.btn-like-icon::before {
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 900;
-  text-rendering: auto;
-  content: "";
-  color: #000;
-  font-weight: normal;
-  opacity: 1;
-  transition: all 300ms ease-in-out;
-}
-.btn-like-icon .liked {
-  background-image: linear-gradient(45deg, #ff79da 0%, #b661db 100%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-.btn-like-icon .liked::before {
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 900;
-  text-rendering: auto;
-  content: "";
-  font-weight: bold;
-  transform-origin: center;
-  transform: scale(0);
-  opacity: 0;
-  transition: all 300ms ease-in-out;
-}
-.btn-like-icon:hover::before {
-  opacity: 0;
-}
-.btn-like-icon:hover .liked::before {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* like button using svg smil animation */
-.btn-like-svg {
-  display: block;
-  padding: 0;
-  background: 0;
-  border: 0;
-  position: relative;
-  z-index: 10;
-}
-.btn-like-svg .heart-stroke {
-  stroke: black;
-  fill: transparent;
-}
-.btn-like-svg .heart-fill {
-  stroke: transparent;
-}
-
-/* like button using clip-path and external svg. path not supported on chrome*/
-.btn-like-clip {
-  padding: 0;
-  background: 0;
-  border: 0;
-}
-.btn-like-clip:hover::after {
-  background-position: bottom;
-}
-.btn-like-clip::before, .btn-like-clip::after {
-  content: "";
-  grid-area: btn-like;
-  height: 28px;
-  width: 28px;
-}
-.btn-like-clip::before {
-  background-color: #000;
-  clip-path: url(../images/clip-path.svg#clipping-stroke);
-}
-.btn-like-clip::after {
-  background-image: linear-gradient(to top, #ff79da 0%, #9356dc 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
-  background-size: 100% 200%;
-  background-position: top;
-  clip-path: url(../images/clip-path.svg#clipping-bg);
-  transition: background-position 300ms ease-in-out;
-}
-
-.checkbox {
-  display: grid;
-  grid-template-columns: min-content auto;
-}
-.checkbox--disabled {
-  color: #7e7e7e;
-}
-
-.checkbox__control {
-  display: inline-grid;
-  width: 1em;
-  height: 1em;
-  border-radius: 0.25em;
-  border: 0.1em solid currentColor;
-}
-.checkbox__control svg {
-  transition: transform 0.1s ease-in 25ms;
-  transform: scale(0);
-  transform-origin: bottom left;
-}
-
-.checkbox__input {
-  display: grid;
-  grid-template-areas: "checkbox";
-}
-.checkbox__input > * {
-  grid-area: checkbox;
-}
-.checkbox__input input {
-  opacity: 0;
-  width: 1em;
-  height: 1em;
-}
-.checkbox__input input:focus-visible + .checkbox__control {
-  box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
-}
-.checkbox__input input:checked + .checkbox__control svg {
-  transform: scale(1);
-}
-.checkbox__input input:disabled + .checkbox__control {
-  color: var(--disabled);
 }
 
 .modal-box {
@@ -851,6 +705,7 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   row-gap: 18px;
+  align-content: start;
 }
 .menu__field .h2 {
   font-size: 1.6rem;
@@ -858,7 +713,6 @@ button {
   text-transform: uppercase;
   padding: 0;
   /* hack to reset legend */
-  display: table;
   float: left;
   margin: 0;
   padding: 0;
@@ -884,6 +738,7 @@ button {
   display: flex;
   overflow: hidden;
   cursor: pointer;
+  height: 68px;
 }
 .menu__field .menu-item:nth-of-type(2) {
   animation-delay: 200ms;
@@ -928,20 +783,44 @@ button {
 }
 .menu__field .menu-item .menu-item__input {
   background: #99E2D0;
-  place-content: center;
-  width: 60px;
+  display: grid;
+  grid-template-areas: "checkbox";
   margin-right: -60px;
+  place-content: center;
   transition: margin linear 400ms;
+  width: 60px;
 }
-.menu__field .menu-item .menu-item__control {
+.menu__field .menu-item .menu-item__input .menu-item__control {
+  grid-area: checkbox;
+  display: inline-grid;
   height: 2rem;
   width: 2rem;
   border-radius: 2rem;
-  color: #99E2D0;
   background: #fff;
-  transform: rotate(0);
+  color: #99E2D0;
   opacity: 0;
+  transform: rotate(0);
   transition: transform linear 400ms, opacity linear 400ms;
+}
+.menu__field .menu-item .menu-item__input .menu-item__control svg {
+  transition: transform 0.1s ease-in 25ms;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+.menu__field .menu-item .menu-item__input input {
+  grid-area: checkbox;
+  opacity: 0;
+  width: 1em;
+  height: 1em;
+}
+.menu__field .menu-item .menu-item__input input:focus-visible + .checkbox__control {
+  box-shadow: 0 0 0 0.05em #fff, 0 0 2px 2px #9356DC;
+}
+.menu__field .menu-item .menu-item__input input:checked + .checkbox__control svg {
+  transform: scale(1);
+}
+.menu__field .menu-item .menu-item__input input:disabled + .checkbox__control {
+  color: var(--disabled);
 }
 .menu__field .menu-item .menu-item__input:focus-within {
   transition: none !important;
@@ -950,7 +829,6 @@ button {
 .menu__field .menu-item .menu-item__input:focus-within .menu-item__control {
   transition: none !important;
   opacity: 1;
-  transform: rotate(360deg);
 }
 
 @keyframes menu-init {
@@ -997,14 +875,14 @@ button {
   border-color: transparent;
 }
 .site-footer li a:focus {
-  color: #782cd3;
+  color: black;
 }
 .site-footer li a:hover {
   color: currentColor;
   border-color: currentColor;
 }
 .site-footer li a:active {
-  color: #782cd3;
+  color: black;
 }
 .site-footer li::before {
   margin-right: 15px;
