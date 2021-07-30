@@ -42,6 +42,10 @@
             border: 0;
             display: grid;
             grid-template-areas: "image" "text";
+
+            &:hover {
+                color: $color__link--hover;
+            }
         }
         
         .post__picture {

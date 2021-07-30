@@ -14,18 +14,8 @@ h1,
 h2,
 h3,
 h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+p {
   margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
-  list-style: none;
 }
 
 /* Set core root defaults */
@@ -38,6 +28,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  margin: 0;
 }
 
 /* Make images easier to work with */
@@ -186,7 +177,7 @@ a {
   outline: solid transparent;
   position: relative;
   text-decoration: none;
-  transition: all ease-in-out 200ms;
+  transition: color ease-in-out 200ms;
 }
 
 a:visited {
@@ -215,7 +206,6 @@ a:active {
 /* Elements
 --------------------------------------------- */
 body {
-  margin: 0;
   background: #fff;
 }
 
@@ -280,11 +270,6 @@ button {
 .btn-like > * {
   grid-area: btn-like;
 }
-.btn-like .like-check {
-  opacity: 0;
-  width: 1em;
-  height: 1em;
-}
 .btn-like .like-check:checked ~ .heart-fill {
   transform: scale(1);
 }
@@ -330,7 +315,7 @@ button {
 .btn-like .heart-fill {
   transform-origin: bottom left;
   transform: scale(0);
-  transition: all 0.2s ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 .btn-like .heart-fill::before, .btn-like .heart-fill::after {
   background: #9356DC;
@@ -573,7 +558,7 @@ button {
   font-size: 2.4rem;
   padding: 0 40px;
 }
-.location__form h2 {
+.location__form p {
   font-size: 1.8rem;
   color: #353535;
   font-weight: 300;
@@ -948,6 +933,9 @@ button {
   border: 0;
   display: grid;
   grid-template-areas: "image" "text";
+}
+.page-home .main-content .post__link:hover {
+  color: #782cd3;
 }
 .page-home .main-content .post__picture {
   grid-area: image;
