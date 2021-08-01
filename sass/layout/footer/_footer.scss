@@ -1,64 +1,65 @@
 .site-footer {
-    background: $grey-dark;
-    display: grid;
-    grid-template-columns: minmax(0, $large);
-    justify-content: center;
-    padding: 25px $site-gap 35px;
-    color: $white;;
+  background: $grey-dark;
+  color: $white;
+  display: grid;
+  grid-template-columns: minmax(0, $large);
+  justify-content: center;
+  padding: 25px $site-gap 35px;
 
-    .heading {
-        @media (min-width: $small) {
-            text-align: center;
-        }
+  .heading {
+    @media (min-width: $small) {
+      text-align: center;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: $small) {
+      column-gap: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  li {
+    margin-top: 2px;
+
+    a {
+      border-color: transparent;
+      color: $white;
+
+      &:focus {
+        color: $color-link--hover;
+      }
+
+      &:hover {
+        border-color: currentColor;
+        color: currentColor;
+      }
+
+      &:active {
+        color: $color-link--hover;
+      }
     }
 
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-        @media (min-width: $small) {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            column-gap: 30px;
-        }
+    &::before {
+      margin-right: 15px;
     }
 
-    li {
-        margin-top: 2px;
+    &:nth-of-type(1)::before {
+      @include icon;
 
-        a {
-            color: $white;
-            border-color: transparent;
-
-            &:focus {
-                color: darken($color__link--hover, 80);
-            }
-
-            &:hover {
-                color: currentColor;
-                border-color: currentColor;
-            }
-
-            &:active {
-                color: darken($color__link--hover, 80);
-            }
-
-        }
-
-        &::before {
-            margin-right: 15px;
-        }
-
-        &:nth-of-type(1)::before {
-            @include icon;
-            content: "\f2e7";
-        }
-
-        &:nth-of-type(2)::before {
-            @include icon;
-            content: "\f4c4";
-        }
+      content: '\f2e7';
     }
+
+    &:nth-of-type(2)::before {
+      @include icon;
+
+      content: '\f4c4';
+    }
+  }
 }

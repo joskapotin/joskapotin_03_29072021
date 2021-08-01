@@ -1,113 +1,116 @@
 .operations {
-    padding: 50px $site-gap 70px;
-    display: grid;
-    grid-template-columns: minmax(0, $image-width__max);
-    justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, $image-width-max);
+  justify-content: center;
+  padding: 50px $site-gap 70px;
 
-    @media (min-width: $medium){
-        grid-template-columns: minmax(0, $image-width__max*2 + $site-gap*2);
+  @media (min-width: $medium) {
+    grid-template-columns: minmax(0, $image-width-max*2 + $site-gap*2);
+  }
+
+  .section-title {
+    @media (min-width: $small) {
+      text-align: center;
     }
 
-    .section-title {
-        @media (min-width: $small) {
-            text-align: center;
-        }
-        @media (min-width: $medium) {
-            margin-bottom: $site-gap*2;
-        }
+    @media (min-width: $medium) {
+      margin-bottom: $site-gap*2;
     }
+  }
 }
 
 .operations__list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: $site-gap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    counter-reset: operations-counter;
+  counter-reset: operations-counter;
+  display: grid;
+  gap: $site-gap;
+  grid-template-columns: minmax(0, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-    @media (min-width: $medium) {
-        grid-template-columns: repeat(3, minmax( 0, 1fr ));
-        gap: $site-gap*2;
+  @media (min-width: $medium) {
+    gap: $site-gap*2;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .operation {
+    @include box-shadow;
+
+    align-items: center;
+    background: $grey-lighter;
+    border-radius: 50vh;
+    counter-increment: operations-counter;
+    display: flex;
+    flex-grow: 1;
+    margin-left: 12px;
+    padding-bottom: 25px;
+    padding-right: 33px;
+    padding-top: 25px;
+    position: relative;
+    z-index: 10;
+
+    &::before {
+      background: $color-primary;
+      border-radius: 24px;
+      color: $white;
+      content: counter(operations-counter);
+      font-size: 1.4rem;
+      height: 24px;
+      left: -12px;
+      line-height: 25px;
+      position: absolute;
+      text-align: center;
+      width: 24px;
     }
 
-    .operation {
-        @include box-shadow;
-        align-items: center;
-        background: $grey-lighter;
-        border-radius: 50vh;
-        counter-increment: operations-counter;
-        display: flex;
-        flex-grow: 1;
-        margin-left: 12px;
-        padding-bottom: 25px;
-        padding-right: 33px;
-        padding-top: 25px;
-        position: relative;
-        z-index: 10;
-
-        &::before {
-            content: counter(operations-counter);
-            position: absolute;
-            left: -12px;
-            height: 24px;
-            width: 24px;
-            border-radius: 24px;
-            background: $color-primary;
-            color: $white;
-            text-align: center;
-            font-size: 1.4rem;
-            line-height: 25px;
-        }
-
-        &:after {
-            background: lighten($color-primary, 36);
-            border-radius: inherit;
-            bottom: 0;
-            content: "";
-            left: 0;
-            opacity: 0;
-            position: absolute;
-            transition: opacity ease-in-out 200ms;
-            right: 0;
-            top: 0;
-            z-index: -1;
-        }
-
-        &:hover {
-            .operation__text::before {
-                color: $color-primary;
-            }
-
-            &::after {
-                opacity: 1;
-            }
-        }
-
-        .operation__text {
-            font-weight: bolder;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-
-            &::before {
-                @include icon;
-                color: $grey;
-                margin: 0 33px 0 27px;
-            }
-        }
-
-        &:nth-of-type(1) .operation__text::before {
-            content: "\f3cd";
-        }
-
-        &:nth-of-type(2) .operation__text::before {
-            content: "\f03a";
-        }
-
-        &:nth-of-type(3) .operation__text::before {
-            content: "\f54e";
-        }
+    &::after {
+      background: lighten($color-primary, 36);
+      border-radius: inherit;
+      bottom: 0;
+      content: '';
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity ease-in-out 200ms;
+      z-index: -1;
     }
+
+    .operation__text {
+      font-weight: bolder;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &::before {
+        @include icon;
+
+        color: $grey;
+        margin: 0 33px 0 27px;
+      }
+    }
+
+    &:hover {
+      .operation__text::before {
+        color: $color-primary;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:nth-of-type(1) .operation__text::before {
+      content: '\f3cd';
+    }
+
+    &:nth-of-type(2) .operation__text::before {
+      content: '\f03a';
+    }
+
+    &:nth-of-type(3) .operation__text::before {
+      content: '\f54e';
+    }
+  }
 }

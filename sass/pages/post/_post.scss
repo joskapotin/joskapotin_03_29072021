@@ -1,118 +1,119 @@
 .page-post {
-    .main-content {
-        position: relative;
-        padding-top: 210px;
+  .main-content {
+    padding-top: 210px;
+    position: relative;
 
-        @media (min-width: $image-width__max) and (max-width: $large) {
-            &::after {
-                background: $grey-dark;
-                bottom: 0;
-                content: "";
-                height: $site-gap;
-                left: 0;
-                position: absolute;
-                right: 0;
-            }
-        }
-
-        @media (min-width: $xlarge) {
-            &::after {
-                background: $grey-dark;
-                bottom: 0;
-                content: "";
-                height: $site-gap;
-                left: 0;
-                position: absolute;
-                right: 0;
-            }
-        }
-    }
-
-    .section-post {
-        @include box-shadow;
-        background: $white;
-        border-top-left-radius: 37px;
-        border-top-right-radius: 37px;
-        overflow: hidden;
-        position: relative;
-        z-index: 10;
-        padding: 0 $site-gap 0;
-        margin-right: auto;
-        margin-left: auto;
-        max-width: $image-width__max;
-
-        @media (min-width: $image-width__max) and (max-width: $large) {
-            border-bottom-left-radius: 37px;
-            border-bottom-right-radius: 37px;
-        }
-
-        @media (min-width: $large) {
-            max-width: $xlarge;
-        }
-
-        @media (min-width: $xlarge) {
-            border-bottom-left-radius: 37px;
-            border-bottom-right-radius: 37px;
-        }
-    }
-
-    .post__picture {
-        position: absolute;
-        width: 100%;
-        top: 0;
+    @media (min-width: $image-width-max) and (max-width: $large) {
+      &::after {
+        background: $grey-dark;
+        bottom: 0;
+        content: "";
+        height: $site-gap;
         left: 0;
+        position: absolute;
+        right: 0;
+      }
     }
 
-    .post__img {
-        height: 257px;
-        border-radius: 0;
+    @media (min-width: $xlarge) {
+      &::after {
+        background: $grey-dark;
+        bottom: 0;
+        content: "";
+        height: $site-gap;
+        left: 0;
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  .section-post {
+    @include box-shadow;
+
+    background: $white;
+    border-top-left-radius: 37px;
+    border-top-right-radius: 37px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $image-width-max;
+    overflow: hidden;
+    padding: 0 $site-gap 0;
+    position: relative;
+    z-index: 10;
+
+    @media (min-width: $image-width-max) and (max-width: $large) {
+      border-bottom-left-radius: 37px;
+      border-bottom-right-radius: 37px;
     }
 
-    .post__header {
-        align-items: flex-start;
-        background: $white;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-top: 30px;
-        position: relative;
-        z-index: 10;
-
-        @media (min-width: $large) {
-            justify-content: center;
-
-            .btn-like {
-                margin-left: $site-gap*2;
-            }
-        }
+    @media (min-width: $large) {
+      max-width: $xlarge;
     }
 
-    .post__title {
-        padding: 0;
+    @media (min-width: $xlarge) {
+      border-bottom-left-radius: 37px;
+      border-bottom-right-radius: 37px;
+    }
+  }
+
+  .post__picture {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .post__img {
+    border-radius: 0;
+    height: 257px;
+  }
+
+  .post__header {
+    align-items: flex-start;
+    background: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 30px;
+    position: relative;
+    z-index: 10;
+
+    @media (min-width: $large) {
+      justify-content: center;
+
+      .btn-like {
+        margin-left: $site-gap*2;
+      }
+    }
+  }
+
+  .post__title {
+    padding: 0;
+  }
+
+  .btn-like {
+    margin: 0 0 0 $site-gap;
+  }
+
+  .post__form {
+    display: grid;
+    gap: $site-gap*3;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 30px;
+    padding-bottom: 55px;
+
+    @media (min-width: $large) {
+      grid-template-columns: repeat(3, minmax(0, 400px));
+      justify-content: space-between;
     }
 
-    .btn-like {
-        margin: 0 0 0 $site-gap;
+    .btn {
+      margin: auto;
+
+      @media (min-width: $large) {
+        grid-column: 2/3;
+      }
     }
-
-    .post__form {
-        margin-top: 30px;
-        padding-bottom: 55px;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: $site-gap*3;
-
-        @media (min-width: $large) {
-            grid-template-columns: repeat(3, minmax(0, 400px));
-            justify-content: space-between;
-        }
-
-        .btn {
-            margin: auto;
-
-            @media (min-width: $large) {
-                grid-column: 2/3;
-            }
-        }
-    }
+  }
 }

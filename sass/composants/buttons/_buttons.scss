@@ -1,128 +1,127 @@
-button {
-    cursor: pointer;
-}
-
 .btn {
-    @include box-shadow;
-    background: $color-btn;
-    background-image: $gradient-btn;
+  @include box-shadow;
+
+  background: $color-btn;
+  background-image: $gradient-btn;
+  border: 0;
+  border-radius: 50vh;
+  color: $white;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 45px auto 0;
+  min-width: 186px;
+  padding: 1.6rem 2.2rem;
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    @include box-shadow(0, 2px, 5px, rgba(121, 72, 182, 0.5));
+
+    background: $color-btn--hover;
+    background: $gradient-btn--hover;
     border-radius: 50vh;
-    border: 0;
-    color: $white;
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin: 45px auto 0;
-    min-width: 186px;
-    padding: 1.6rem 2.2rem;
-    position: relative;
-    z-index: 10;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 200ms linear;
+    z-index: -1;
+  }
 
-    &::before {
-        @include box-shadow(0px, 2px, 5px, rgba(121, 72, 182, 0.5));
-        background: $color-btn--hover;
-        background: $gradient-btn--hover;
-        border-radius: 50vh;
-        bottom: 0;
-        content: "";
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        transition: opacity 200ms linear;
-        z-index: -1;
-    }
+  &:hover::before {
+    opacity: 1;
+  }
 
-    &:hover::before {
-        opacity: 1;
-    }
-
-
-    &:active {
-        top: 1px;
-    }
+  &:active {
+    top: 1px;
+  }
 }
 
 .btn-like {
-    cursor: pointer;
-    display: grid;
-    grid-template-areas: "btn-like";
+  cursor: pointer;
+  display: grid;
+  grid-template-areas: 'btn-like';
+  height: 28px;
+  place-content: center;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 28px;
+
+  > * {
+    grid-area: btn-like;
+  }
+
+  .like-check {
+    height: 1em;
+    opacity: 0;
+    width: 1em;
+  }
+
+  .heart {
     height: 28px;
-    place-content: center;
+    position: relative;
     width: 28px;
-    transform-origin: center;
-    transform: rotate(-45deg);
+  }
 
-    > * {
-        grid-area: btn-like;
-    }
+  .heart::before,
+  .heart::after {
+    background-color: $grey-darker;
+    border-radius: 18px 18px 0 0;
+    bottom: 0;
+    content: '';
+    height: 28px;
+    position: absolute;
+    width: 18px;
+  }
 
-    .like-check {
+  .heart::after {
+    border-radius: 0 18px 18px 0;
+    height: 18px;
+    width: 28px;
+  }
 
-        &:checked ~ .heart-fill {
-            transform: scale(1);
-        }
+  .like-check:focus-visible + .heart {
+    outline: 2px solid $color-primary;
+    outline-offset: 0.25em;
+  }
 
-        &:focus-visible + .heart {
-            outline: 2px solid $color-primary;
-            outline-offset: 0.25em;
-        }
+  .heart-clip {
+    height: 26px;
+    margin: auto;
+    width: 26px;
+  }
 
-    }
+  .heart-clip::before,
+  .heart-clip::after {
+    background-color: $white;
+    border-radius: 16px 16px 0 0;
+    height: 26px;
+    width: 16px;
+  }
 
-    .heart {
-        position: relative;
-        height: 28px;
-        width: 28px;
+  .heart-clip::after {
+    border-radius: 0 16px 16px 0;
+    height: 16px;
+    width: 26px;
+  }
 
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            width: 18px;
-            height: 28px;
-            border-radius: 18px 18px 0 0;
-            background-color: $grey-darker;
-        }
+  .heart-fill {
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: transform 200ms ease-in-out;
+  }
 
-        &::after {
-            width: 28px;
-            height: 18px;
-            border-radius: 0 18px 18px 0;
-        }
-    }
+  .heart-fill::before,
+  .heart-fill::after {
+    background: $color-primary;
+    background: $gradient-heart;
+  }
 
-    .heart-clip {
-        height: 26px;
-        width: 26px;
-        margin: auto;
-
-        &::before,
-        &::after {
-            width: 16px;
-            height: 26px;
-            border-radius: 16px 16px 0 0;
-            background-color: $white;
-        }
-
-        &::after {
-            width: 26px;
-            height: 16px;
-            border-radius: 0 16px 16px 0;
-        }
-    }
-
-    .heart-fill {
-        transform-origin: bottom left;
-        transform: scale(0);
-        transition: transform 200ms ease-in-out;
-
-        &::before,
-        &::after {
-            background: $color-primary;
-            background: $gradient-heart;
-        }
-    }
+  .like-check:checked ~ .heart-fill {
+    transform: scale(1);
+  }
 }

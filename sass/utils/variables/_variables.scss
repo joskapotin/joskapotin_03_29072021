@@ -1,6 +1,6 @@
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
 
 $white: #fff;
 $grey: #7e7e7e;
@@ -10,30 +10,30 @@ $grey-dark: #353535;
 $grey-darker: #101010;
 $black: #000;
 
-$color__background-body: $white;
-$color__background: $grey-lighter;
-$color__text-main: $black;
-$color__logo: $grey-darker;
+$color-background-body: $white;
+$color-background: $grey-lighter;
+$color-text-main: $black;
+$color-logo: $grey-darker;
 
-$color__link: $color-primary;
-$color__link--hover: lightness-shift($color__link);
+$color-link: $color-primary;
+$color-link--hover: darken($color-link, 30);
 
 $color-btn: $color-primary;
 $color-btn--hover: lighten($color-primary, 5);
 
 $gradient-btn: linear-gradient(to top, $color-primary, $color-secondary);
-$gradient-btn--hover: linear-gradient(to top, lightness-shift( $color-primary ), lightness-shift( $color-secondary ));
+$gradient-btn--hover: linear-gradient(to top, lightness-shift($color-primary), lightness-shift($color-secondary));
 
-$gradient-heart: linear-gradient(45deg, rgba(255,121,218,1) 0%, rgba(182,97,219,1) 100%);
+$gradient-heart: linear-gradient(45deg, rgba(255, 121, 218, 1) 0%, rgba(182, 97, 219, 1) 100%);
 
-$font__heading: 'Shrikhand', cursive;
-$font__main: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$font__size: 1.6rem;
-$font__weight: 300;
+$font-heading: 'Shrikhand', cursive;
+$font-main: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$font-size: 1.6rem;
+$font-weight: 300;
 $line-height: 1.6;
 
 $site-gap: 20px;
-$image-width__max: 600px;
+$image-width-max: 600px;
 
 $small: 768px;
 $medium: 992px;

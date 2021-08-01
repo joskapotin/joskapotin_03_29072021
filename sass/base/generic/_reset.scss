@@ -2,7 +2,17 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 1rem = 10px */
+html {
+  font-size: 62.5%;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 /* Remove default margin */
@@ -12,27 +22,25 @@ h2,
 h3,
 h4,
 p {
-    margin: 0;
-}
-
-/* Set core root defaults */
-html:focus-within {
-    scroll-behavior: smooth;
+  margin: 0;
 }
 
 /* Set core body defaults */
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    margin: 0;
+  background: $color-background-body;
+  color: $color-text-main;
+  font-family: $font-main;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  min-height: 100vh;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-    max-width: 100%;
-    display: block;
+  display: block;
+  max-width: 100%;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -40,21 +48,25 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

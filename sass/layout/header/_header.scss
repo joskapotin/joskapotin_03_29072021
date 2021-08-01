@@ -1,36 +1,36 @@
 .site-header {
-    display: grid;
-    min-height: 63px;
-    grid-template-areas: "site-header";
-    align-items: center;
-    grid-template-columns: minmax(0, $image-width__max);
-    justify-content: center;
-    padding: 0 $site-gap;
+  align-items: center;
+  display: grid;
+  grid-template-areas: 'site-header';
+  grid-template-columns: minmax(0, $image-width-max);
+  justify-content: center;
+  min-height: 63px;
+  padding: 0 $site-gap;
 
-    .logo {
-        color: $color__logo;
-        font-family: $font__heading;
-        font-size: 3rem;
-        grid-area: site-header;
-        justify-self: center;
-        margin: 0;
+  .logo {
+    color: $color-logo;
+    font-family: $font-heading;
+    font-size: 3rem;
+    grid-area: site-header;
+    justify-self: center;
+    margin: 0;
+  }
+
+  nav {
+    grid-area: site-header;
+    justify-self: start;
+
+    a {
+      border: 0;
+      color: $grey-dark;
+      font-size: 1.6rem;
+      padding: 1em 1em 1em 0;
+
+      &::before {
+        @include icon;
+
+        content: '\f060';
+      }
     }
-
-    nav {
-        grid-area: site-header;
-        justify-self: start;
-
-        a {
-            padding: 1em 1em 1em 0;
-            color: $grey-dark;
-            border: 0;
-            font-size: 1.6rem;
-
-            &::before {
-                @include icon;
-                content: "\f060";
-            }
-        }
-
-    }
+  }
 }

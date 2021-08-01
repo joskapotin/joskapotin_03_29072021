@@ -1,197 +1,196 @@
 .modal-box {
-    @include box-shadow;
-    background-color: $white;
-    display: grid;
-    place-content: center;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    place-content: center;
-    position: fixed;
-    transform-origin: center;
-    transform: scale(0);
-    z-index: 1000;
-    animation: modal-init 5s linear forwards;
+  @include box-shadow;
 
-    .heading {
-        display: block;
-        margin: 0 auto 120px;
-        font-size: 4rem;
-    }
+  animation: modal-init 5s linear forwards;
+  background-color: $white;
+  bottom: 0;
+  display: grid;
+  left: 0;
+  opacity: 0;
+  place-content: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: scale(0);
+  transform-origin: center;
+  z-index: 1000;
 
-    .text {
-        margin-top: 10px;
-        text-align: center;
-    }
+  .heading {
+    display: block;
+    font-size: 4rem;
+    margin: 0 auto 120px;
+  }
+
+  .text {
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 
 @keyframes modal-init {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
 
-    10% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
 
-    90% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
 
-    100% {
-        transform: scale(0);
-        opacity: 0;
-    }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
 }
 
 .loader {
-    $ball-nbr: 3;
-    $ball-size: 30px;
-    $gap: 30px;
-    $jump: -110px;
-    $duration: 1s;
-    $delay: .15s;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat($ball-nbr, minmax(0, 1fr));
-    column-gap: $gap;
+  $ball-nbr: 3;
+  $ball-size: 30px;
+  $gap: 30px;
+  $jump: -110px;
+  $duration: 1s;
+  $delay: 0.15s;
 
-    .ball {
-        border-radius: $ball-size;
-        height: $ball-size;
-        position: relative;
-        width: $ball-size;
-        z-index: 999;
-        transform-origin: center;
-        animation: jump $duration infinite both;
-        cursor: pointer;
+  column-gap: $gap;
+  display: grid;
+  grid-template-columns: repeat($ball-nbr, minmax(0, 1fr));
+  margin: auto;
 
-        &:active {
-            animation-play-state: paused;
+  .ball {
+    animation: jump $duration infinite both;
+    border-radius: $ball-size;
+    cursor: pointer;
+    height: $ball-size;
+    position: relative;
+    transform-origin: center;
+    width: $ball-size;
+    z-index: 999;
+  }
 
-            + div + div + div {
-                animation-play-state: paused;
-            }
-        }
+  .ball:active {
+    animation-play-state: paused;
+  }
+
+  div:nth-of-type(1) {
+    background: $color-primary;
+    background: linear-gradient(0deg, darken($color-primary, 10) 0%, $color-primary 100%);
+  }
+
+  div:nth-of-type(2) {
+    animation-delay: $delay*2;
+    background: $color-secondary;
+    background: linear-gradient(0deg, darken($color-secondary, 10) 0%, $color-secondary 100%);
+  }
+
+  div:nth-of-type(3) {
+    animation-delay: $delay;
+    background: $color-tertiary;
+    background: linear-gradient(0deg, darken($color-tertiary, 10) 0%, $color-tertiary 100%);
+  }
+
+  div:nth-of-type(5) {
+    animation-delay: $delay*2;
+  }
+
+  div:nth-of-type(6) {
+    animation-delay: $delay;
+  }
+
+  .ball:active + div + div + div {
+    animation-play-state: paused;
+  }
+
+  .shadow {
+    animation: shrink $duration infinite both;
+    background-color: #000;
+    border-radius: 50%;
+    bottom: 4px;
+    display: inline-block;
+    height: 5px;
+    opacity: 0.2;
+    position: relative;
+    width: $ball-size;
+  }
+
+  @keyframes jump {
+    0% {
+      animation-timing-function: ease-in;
+      transform: translateY(0) scale(1.3, 0.4);
+      transform-origin: bottom;
     }
 
-    .shadow {
-        background-color: black;
-        border-radius: 50%;
-        display: inline-block;
-        height: 5px;
-        opacity: .2;
-        position: relative;
-        bottom: 4px;
-        width: $ball-size;
-        animation: shrink $duration infinite both;
+    15% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+      transform-origin: center;
     }
 
-    div {
-        &:nth-of-type(1) {
-            background: $color-primary;
-            background: linear-gradient(0deg, darken($color-primary, 10) 0%, $color-primary 100%);
-        }
-
-        &:nth-of-type(2) {
-            background: $color-secondary;
-            background: linear-gradient(0deg, darken($color-secondary, 10) 0%, $color-secondary 100%);
-            animation-delay: $delay*2;
-        }
-
-        &:nth-of-type(3) {
-            background: $color-tertiary;
-            background: linear-gradient(0deg, darken($color-tertiary, 10) 0%, $color-tertiary 100%);
-            animation-delay: $delay;
-        }
-
-        &:nth-of-type(5) {
-            animation-delay: $delay*2;
-        }
-
-        &:nth-of-type(6) {
-            animation-delay: $delay;
-        }
+    45% {
+      animation-timing-function: ease-in;
+      transform: translateY($jump) scale(0.8, 1.2);
+      transform-origin: top;
     }
 
-    @keyframes jump {
-        0% {
-            transform-origin: bottom;
-            transform: translateY(0) scale(1.3, .4);
-            animation-timing-function: ease-in;
-        }
-
-        15% {
-            transform-origin: center;
-            transform: translateY(0);
-            animation-timing-function: ease-out;
-        }
-
-        45% {
-            transform-origin: top;
-            transform: translateY($jump) scale(.8, 1.2);
-            animation-timing-function: ease-in;
-        }
-
-        55% {
-            transform-origin: top;
-            transform: translateY($jump) scale(.8, 1.2);
-            animation-timing-function: ease-in;
-        }
-
-        88% {
-            transform-origin: center;
-            transform: translateY(0);
-            animation-timing-function: ease-out;
-        }
-
-        100% {
-            transform-origin: bottom;
-            transform: translateY(0) scale(1.3, .4);
-            animation-timing-function: ease-out;
-        }
+    55% {
+      animation-timing-function: ease-in;
+      transform: translateY($jump) scale(0.8, 1.2);
+      transform-origin: top;
     }
 
-    @keyframes shrink {
-        0% {
-            transform: scaleX(1);
-            opacity: .2;
-            animation-timing-function: ease-in;
-        }
-
-        15% {
-            transform: scaleX(1);
-            opacity: .2;
-            animation-timing-function: ease-out;
-        }
-
-        45% {
-            transform: scaleX(.5);
-            opacity: .05;
-            animation-timing-function: ease-in;
-        }
-
-        55% {
-            transform: scaleX(.5);
-            opacity: .05;
-            animation-timing-function: ease-in;
-        }
-
-        88% {
-            transform: scaleX(1);
-            opacity: .2;
-            animation-timing-function: ease-out;
-        }
-
-        100% {
-            transform: scaleX(1);
-            opacity: .2;
-            animation-timing-function: ease-out;
-        }
+    88% {
+      animation-timing-function: ease-out;
+      transform: translateY(0);
+      transform-origin: center;
     }
+
+    100% {
+      animation-timing-function: ease-out;
+      transform: translateY(0) scale(1.3, 0.4);
+      transform-origin: bottom;
+    }
+  }
+
+  @keyframes shrink {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 0.2;
+      transform: scaleX(1);
+    }
+
+    15% {
+      animation-timing-function: ease-out;
+      opacity: 0.2;
+      transform: scaleX(1);
+    }
+
+    45% {
+      animation-timing-function: ease-in;
+      opacity: 0.05;
+      transform: scaleX(0.5);
+    }
+
+    55% {
+      animation-timing-function: ease-in;
+      opacity: 0.05;
+      transform: scaleX(0.5);
+    }
+
+    88% {
+      animation-timing-function: ease-out;
+      opacity: 0.2;
+      transform: scaleX(1);
+    }
+
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 0.2;
+      transform: scaleX(1);
+    }
+  }
 }
