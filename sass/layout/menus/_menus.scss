@@ -25,7 +25,7 @@
 
     &::after {
       background: $color-tertiary;
-      content: '';
+      content: "";
       display: block;
       height: 3px;
       margin-top: 6px;
@@ -51,6 +51,10 @@
 
   &:nth-of-type(3) {
     animation-delay: 400ms;
+  }
+
+  &:nth-of-type(4) {
+    animation-delay: 600ms;
   }
 }
 
@@ -90,7 +94,7 @@
 .menu-item__input {
   background: $color-tertiary;
   display: grid;
-  grid-template-areas: 'checkbox';
+  grid-template-areas: "checkbox";
   margin-right: -60px;
   place-content: center;
   transition: margin linear 400ms;
