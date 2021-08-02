@@ -24,7 +24,7 @@ Vous décidez alors, avec l’équipe, que le site contiendra 4 menus dans un pr
 
 De retour à votre bureau, vous trouvez un post-it de Fanny.
 
-Vous trouvez les [maquettes](mission\maquettes-ohmyfood\maquettes) du site dans votre boîte mail, envoyées par Fanny.
+Vous trouvez les [maquettes](mission/maquettes/) du site dans votre boîte mail, envoyées par Fanny.
 
 Vous avez désormais tous les éléments pour construire ce site mobile. Vous vous lancez dans cette nouvelle aventure !
 
