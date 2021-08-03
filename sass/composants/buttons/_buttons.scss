@@ -147,11 +147,12 @@
   }
 
   &::after {
-    background-clip: text;
     background-image: $gradient-btn;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 100% 0;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     transition: background-size 300ms linear;

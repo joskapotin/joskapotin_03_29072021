@@ -338,11 +338,12 @@ img {
   transition: opacity 300ms linear;
 }
 .btn-like-glyph::after {
-  background-clip: text;
   background-image: linear-gradient(to top, #9356dc, #ff79da);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100% 0;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   transition: background-size 300ms linear;
