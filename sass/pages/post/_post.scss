@@ -70,11 +70,12 @@
   }
 
   .post__header {
-    align-items: flex-start;
+    align-items: center;
     background: $white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 2rem;
     padding-top: 30px;
     position: relative;
     z-index: 10;
@@ -89,11 +90,12 @@
   }
 
   .post__title {
+    margin: 0;
     padding: 0;
   }
 
   .btn-like {
-    margin: 0 0 0 $site-gap;
+    margin: 0 0 10px $site-gap;
   }
 
   .post__form {

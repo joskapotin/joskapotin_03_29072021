@@ -125,3 +125,45 @@
     transform: scale(1);
   }
 }
+
+.btn-like-glyph {
+  display: grid;
+  grid-template-areas: "btn-like";
+  margin: 0 0 0 $site-gap;
+
+  &::before,
+  &::after {
+    @include icon;
+
+    content: "\f004";
+    font-size: 2.7rem;
+    grid-area: btn-like;
+  }
+
+  &::before {
+    font-weight: normal;
+    opacity: 1;
+    transition: opacity 300ms linear;
+  }
+
+  &::after {
+    background-clip: text;
+    background-image: $gradient-btn;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    transition: background-size 300ms linear;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      background-size: 100% 100%;
+    }
+  }
+}

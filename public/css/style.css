@@ -315,6 +315,45 @@ img {
   transform: scale(1);
 }
 
+.btn-like-glyph {
+  display: grid;
+  grid-template-areas: "btn-like";
+  margin: 0 0 0 20px;
+}
+.btn-like-glyph::before, .btn-like-glyph::after {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  text-rendering: auto;
+  content: "";
+  font-size: 2.7rem;
+  grid-area: btn-like;
+}
+.btn-like-glyph::before {
+  font-weight: normal;
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+.btn-like-glyph::after {
+  background-clip: text;
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  transition: background-size 300ms linear;
+}
+.btn-like-glyph:hover::before {
+  opacity: 0;
+}
+.btn-like-glyph:hover::after {
+  background-size: 100% 100%;
+}
+
 .modal-box {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   animation: modal-init 5s linear forwards;
@@ -720,6 +759,9 @@ img {
 .menu-item:nth-of-type(3) {
   animation-delay: 400ms;
 }
+.menu-item:nth-of-type(4) {
+  animation-delay: 600ms;
+}
 
 .menu-item__label {
   display: flex;
@@ -1039,11 +1081,12 @@ img {
   height: 257px;
 }
 .page-post .post__header {
-  align-items: flex-start;
+  align-items: center;
   background: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 2rem;
   padding-top: 30px;
   position: relative;
   z-index: 10;
@@ -1057,10 +1100,11 @@ img {
   }
 }
 .page-post .post__title {
+  margin: 0;
   padding: 0;
 }
 .page-post .btn-like {
-  margin: 0 0 0 20px;
+  margin: 0 0 10px 20px;
 }
 .page-post .post__form {
   display: grid;
