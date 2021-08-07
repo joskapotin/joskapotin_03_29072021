@@ -1,41 +1,41 @@
 .location__form {
-  background: $color-background;
   padding-bottom: 55px;
+  background: $color-background;
   text-align: center;
 
   .location__input {
+    display: flex;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 50px;
     background: $grey-light;
     background: linear-gradient(180deg, rgba(207, 207, 207, 1) 0%, rgba(234, 234, 234, 1) 10%, rgba(234, 234, 234, 1) 100%);
-    box-sizing: border-box;
-    display: flex;
-    height: 50px;
-    justify-content: center;
 
     &::before {
       @include icon;
 
-      content: '\f3c5';
+      content: "\f3c5";
     }
 
     input {
-      background: transparent;
-      border: 0;
-      margin-left: 12px;
       width: 120px;
+      margin-left: 12px;
+      border: 0;
+      background: transparent;
     }
   }
 
   h1 {
-    font-size: 2.4rem;
     margin-top: 40px;
     padding: 0 40px;
+    font-size: 2.4rem;
   }
 
   p {
+    padding: 0 30px;
     color: $grey-dark;
     font-size: 1.8rem;
     font-weight: 300;
-    padding: 0 30px;
   }
 }

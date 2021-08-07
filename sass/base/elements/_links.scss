@@ -1,8 +1,8 @@
 a {
-  border-bottom: 1px dotted currentColor;
-  color: $color-link;
-  outline: solid transparent;
   position: relative;
+  border-bottom: 1px dotted currentColor;
+  outline: solid transparent;
+  color: $color-link;
   text-decoration: none;
 }
 
@@ -11,11 +11,11 @@ a:visited {
 }
 
 a:focus-visible {
-  background: $color-tertiary;
   border-bottom-style: solid;
-  color: $color-link--hover;
   outline: 2px solid $color-primary;
   outline-offset: 0.25em;
+  background: $color-tertiary;
+  color: $color-link--hover;
 }
 
 a:hover {
@@ -24,7 +24,7 @@ a:hover {
 }
 
 a:active {
+  top: 1px;
   background: $color-tertiary;
   color: $color-link--hover;
-  top: 1px;
 }

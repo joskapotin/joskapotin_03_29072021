@@ -1,14 +1,14 @@
 .page-home {
   .main-content {
     display: grid;
-    gap: $site-gap;
-    grid-template-columns: minmax(0, $image-width-max);
     justify-content: center;
     padding: 58px $site-gap 64px;
+    grid-template-columns: minmax(0, $image-width-max);
+    gap: $site-gap;
 
     @media (min-width: $small) {
-      gap: $site-gap*2;
       grid-template-columns: repeat(2, minmax(0, $image-width-max));
+      gap: $site-gap*2;
     }
 
     @media (min-width: $medium) {
@@ -19,29 +19,29 @@
       margin-bottom: 0;
 
       @media (min-width: $small) {
-        grid-column: span 2;
         margin-bottom: $site-gap;
         text-align: center;
+        grid-column: span 2;
       }
     }
 
     .post {
       @include box-shadow;
 
-      background: $white;
-      border-radius: 15px;
       display: grid;
-      grid-template-areas: 'restaurant';
-      overflow: hidden;
       position: relative;
+      border-radius: 15px;
+      background: $white;
+      overflow: hidden;
+      grid-template-areas: "restaurant";
     }
 
     .post__link {
+      display: grid;
       border: 0;
       color: $color-text-main;
-      display: grid;
       grid-area: restaurant;
-      grid-template-areas: 'image' 'text';
+      grid-template-areas: "image" "text";
 
       &:hover {
         background: $color-tertiary;
@@ -61,12 +61,12 @@
     }
 
     .meta-info {
-      background-color: $color-tertiary;
-      border-radius: 3px;
-      color: rgba(0, 0, 0, 0.9);
-      grid-area: image;
       margin: 13px 11px auto auto;
       padding: 5px 13px;
+      border-radius: 3px;
+      background-color: $color-tertiary;
+      color: rgba(0, 0, 0, 0.9);
+      grid-area: image;
     }
 
     .post__title,
@@ -76,13 +76,13 @@
     }
 
     .post__description {
-      padding-bottom: 18px;
       padding-top: 0;
+      padding-bottom: 18px;
     }
 
     .btn-like {
-      grid-area: restaurant;
       margin: auto 24px 33px auto;
+      grid-area: restaurant;
     }
   }
 }

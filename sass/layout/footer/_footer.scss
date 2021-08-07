@@ -1,10 +1,10 @@
 .site-footer {
-  background: $grey-dark;
-  color: $white;
   display: grid;
-  grid-template-columns: minmax(0, $large);
   justify-content: center;
   padding: 25px $site-gap 35px;
+  grid-template-columns: minmax(0, $large);
+  background: $grey-dark;
+  color: $white;
 
   .heading {
     @media (min-width: $small) {
@@ -13,15 +13,15 @@
   }
 
   ul {
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 
     @media (min-width: $small) {
-      column-gap: 30px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      column-gap: 30px;
     }
   }
 
@@ -53,13 +53,13 @@
     &:nth-of-type(1)::before {
       @include icon;
 
-      content: '\f2e7';
+      content: "\f2e7";
     }
 
     &:nth-of-type(2)::before {
       @include icon;
 
-      content: '\f4c4';
+      content: "\f4c4";
     }
   }
 }

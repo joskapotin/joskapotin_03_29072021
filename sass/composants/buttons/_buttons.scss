@@ -1,34 +1,34 @@
 .btn {
   @include box-shadow;
 
-  background: $color-btn;
-  background-image: $gradient-btn;
+  display: block;
+  position: relative;
+  min-width: 186px;
+  margin: 45px auto 0;
+  padding: 1.6rem 2.2rem;
   border: 0;
   border-radius: 50vh;
+  background: $color-btn;
+  background-image: $gradient-btn;
   color: $white;
-  display: block;
   font-size: 1.6rem;
   font-weight: 400;
-  margin: 45px auto 0;
-  min-width: 186px;
-  padding: 1.6rem 2.2rem;
-  position: relative;
   z-index: 10;
 
   &::before {
     @include box-shadow(0, 2px, 5px, rgba(121, 72, 182, 0.5));
 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 200ms linear;
+    border-radius: 50vh;
     background: $color-btn--hover;
     background: $gradient-btn--hover;
-    border-radius: 50vh;
-    bottom: 0;
-    content: "";
-    left: 0;
     opacity: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: opacity 200ms linear;
+    content: "";
     z-index: -1;
   }
 
@@ -42,46 +42,46 @@
 }
 
 .btn-like {
-  cursor: pointer;
   display: grid;
-  grid-template-areas: "btn-like";
+  width: 28px;
   height: 28px;
-  place-content: center;
   transform: rotate(-45deg);
   transform-origin: center;
-  width: 28px;
+  cursor: pointer;
+  grid-template-areas: "btn-like";
+  place-content: center;
 
   > * {
     grid-area: btn-like;
   }
 
   .like-check {
+    width: 1em;
     height: 1em;
     opacity: 0;
-    width: 1em;
   }
 
   .heart {
-    height: 28px;
     position: relative;
     width: 28px;
+    height: 28px;
   }
 
   .heart::before,
   .heart::after {
-    background-color: $grey-darker;
-    border-radius: 18px 18px 0 0;
-    bottom: 0;
-    content: "";
-    height: 28px;
     position: absolute;
+    bottom: 0;
     width: 18px;
+    height: 28px;
+    border-radius: 18px 18px 0 0;
+    background-color: $grey-darker;
+    content: "";
   }
 
   .heart::after {
-    border-radius: 0 18px 18px 0;
-    height: 18px;
     width: 28px;
+    height: 18px;
+    border-radius: 0 18px 18px 0;
   }
 
   .like-check:focus-visible + .heart {
@@ -90,23 +90,23 @@
   }
 
   .heart-clip {
+    width: 26px;
     height: 26px;
     margin: auto;
-    width: 26px;
   }
 
   .heart-clip::before,
   .heart-clip::after {
-    background-color: $white;
-    border-radius: 16px 16px 0 0;
-    height: 26px;
     width: 16px;
+    height: 26px;
+    border-radius: 16px 16px 0 0;
+    background-color: $white;
   }
 
   .heart-clip::after {
-    border-radius: 0 16px 16px 0;
-    height: 16px;
     width: 26px;
+    height: 16px;
+    border-radius: 0 16px 16px 0;
   }
 
   .heart-fill {
@@ -135,27 +135,27 @@
   &::after {
     @include icon;
 
-    content: "\f004";
     font-size: 2.7rem;
+    content: "\f004";
     grid-area: btn-like;
   }
 
   &::before {
-    font-weight: normal;
-    opacity: 1;
     transition: opacity 300ms linear;
+    opacity: 1;
+    font-weight: normal;
   }
 
   &::after {
-    background-image: $gradient-btn;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 0;
+    transition: background-size 300ms linear;
     -webkit-background-clip: text;
     -moz-background-clip: text;
+    background-image: $gradient-btn;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 0;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    transition: background-size 300ms linear;
   }
 
   &:hover {

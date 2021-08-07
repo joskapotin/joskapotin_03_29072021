@@ -1,5 +1,5 @@
 img {
+  width: 100%; // Adhere to container width.
   height: auto; // Make sure images are scaled correctly.
   object-fit: cover;
-  width: 100%; // Adhere to container width.
 }

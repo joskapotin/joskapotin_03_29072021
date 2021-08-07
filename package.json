@@ -6,7 +6,9 @@
   "scripts": {
     "scss": "sass --watch ./sass/style.scss:./public/css/style.css",
     "autoprefixer": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/",
-    "build:css": "npm run scss && npm run autoprefixer"
+    "build:css": "npm run scss && npm run autoprefixer",
+    "lint": "stylelint sass/**/*.scss sass/**/**/*.scss sass/**/**/**/*.scss -f verbose --color  || echo 'lint failed for some file(s).'",
+    "lint:fix": "stylelint sass/**/*.scss sass/**/**/*.scss sass/**/**/**/*.scss --fix -f verbose --color || echo 'lint failed for some file(s).'"
   },
   "browserslist": "last 4 versions",
   "repository": {
@@ -19,5 +21,17 @@
     "url": "https://github.com/joskapotin/joskapotin_03_29072021/issues"
   },
   "homepage": "https://github.com/joskapotin/joskapotin_03_29072021#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "prettier": "2.3.2",
+    "sass": "^1.37.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.20.1",
+    "stylelint-selector-bem-pattern": "^2.1.1"
+  }
 }
