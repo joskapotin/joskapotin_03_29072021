@@ -1,5 +1,7 @@
 # Dynamisez une page web avec des animations CSS
 
+[Le résultat est visible ici](https://joskapotin.github.io/joskapotin_03_29072021/)
+
 ## Scénario
 
 Vous venez d’être recruté chez Ohmyfood!, en tant que développeur junior. Félicitations !
@@ -30,6 +32,6 @@ Vous avez désormais tous les éléments pour construire ce site mobile. Vous vo
 
 ## Compétences évaluées
 
-* Mettre en place une structure de navigation pour un site web
-* Mettre en œuvre des effets CSS graphiques avancés
-* Assurer la cohérence graphique d'un site web
+- Mettre en place une structure de navigation pour un site web
+- Mettre en œuvre des effets CSS graphiques avancés
+- Assurer la cohérence graphique d'un site web
